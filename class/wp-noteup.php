@@ -23,7 +23,7 @@ class WP_NoteUp {
 	 * @return void
 	 */
 	function set_plugin_info() {
-		$this->plugin_headers = get_file_data( dirname( __FILE__ ) .'/../wp-noteup.php', array(
+		$this->plugin_headers = get_file_data( $this->plugin_file, array(
 			'Plugin Name' => 'Plugin Name',
 			'Plugin URI' => 'Plugin URI',
 			'Version' => 'Version',
