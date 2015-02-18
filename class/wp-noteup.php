@@ -22,6 +22,34 @@ class WP_NoteUp extends WP_NoteUp_Base {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'admin_init', array( $this, 'setup_noteups' ) );
+		add_action( 'save_post', array( $this, 'save_post_noteup' ) );
+	}
+
+	function save_post_noteup( $post_id ) {
+
+		// Ensure we're getting the data for the right context.
+		if ( ! wp_verify_nonce( $this->get_request( 'wp-noteup-textarea-nonce' ), 'wp-noteup-textarea' ) ) {
+			return;
+		}
+
+		// TODO: Check that the user can save the post type.
+
+		// Get the noteup
+		$wp_noteup = $this->get_request( 'wp-noteup-textarea', array( $this, 'sanitize_wp_noteup_textarea' ) );
+
+		// Automatically add breaks.
+		$wp_noteup = apply_filters( 'the_content', $wp_noteup );
+
+		// Save.
+		update_post_meta( $post_id, 'wp-noteup', $wp_noteup );
+	}
+
+	function sanitize_wp_noteup_textarea( $value ) {
+		if ( is_string( $value ) ) {
+			return $value;
+		} else {
+			wp_die( __( 'Sorry, but the data came back in a format we didn\'t understand, so we quit.', $this->text_domain ) );
+		}
 	}
 
 	function setup_noteups() {

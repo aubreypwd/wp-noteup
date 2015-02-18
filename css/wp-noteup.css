@@ -1,6 +1,7 @@
 .wp-noteup-textarea,
 .wp-noteup-textarea:active,
-.wp-noteup-textarea:focus {
+.wp-noteup-textarea:focus,
+.wp-noteup-markup {
 	width: 100%;
 	max-height: 200px;
 	display: block;
@@ -13,4 +14,12 @@
 	transition: none;
 	line-height: 21px;
 	overflow: hidden;
+}
+
+.wp-noteup-textarea-hidden {
+	display: none;
+}
+
+.wp-noteup-markup-hidden {
+	display: none;
 }

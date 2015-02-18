@@ -4,12 +4,27 @@ class WP_NoteUp_Templates extends WP_NoteUp_Base {
 
 	/**
 	 * Current template loaded.
+	 *
 	 * @var string
 	 */
 	public $current_template;
 
 	function __construct() {
 		parent::__construct();
+	}
+
+	/**
+	 * Get the value of the noteup.
+	 *
+	 * @param string $context The context for what the meta value is.
+	 * @param mixed $post Any data needed to be passed, usually $post.
+	 *
+	 * @return string The value of the noteup.
+	 */
+	function get_noteup( $context, $post ) {
+		if ( 'post' == $context ) {
+			return apply_filters( 'wp_noteup_get_noteup', get_post_meta( $post->ID, 'wp-noteup', true ) );
+		}
 	}
 
 	/**
