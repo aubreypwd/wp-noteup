@@ -10,7 +10,7 @@ Author URI:
 Text Domain: wp-noteup
 */
 
-// Make sure we aren't colliding with another function (rare).
+// Make sure we aren't colliding with another function (rare?).
 if ( ! function_exists( 'wp_noteup_init' ) ) {
 
 	/**
@@ -20,13 +20,13 @@ if ( ! function_exists( 'wp_noteup_init' ) ) {
 	 */
 	function wp_noteup_init() {
 
-		// The classes
-		require_once( 'class/wp-noteup-base.php' );
+		// The classes.
+		require_once( 'class/wp-noteup-core.php' );
 		require_once( 'class/wp-noteup.php' );
 		require_once( 'class/wp-noteup-templates.php' );
 
-		// Instances
-		$wp_noteup_base = new WP_NoteUp_Base();
+		// Instances.
+		$wp_noteup_base = new WP_NoteUp_Core();
 		$wp_noteup = new WP_NoteUp();
 	}
 } else {

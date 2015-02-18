@@ -1,6 +1,6 @@
 <?php
 
-class WP_NoteUp_Base {
+class WP_NoteUp_Core {
 	public $plugin_file;
 	public $text_domain;
 	public $version;

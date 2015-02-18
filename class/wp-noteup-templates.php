@@ -1,6 +1,6 @@
 <?php
 
-class WP_NoteUp_Templates extends WP_NoteUp_Base {
+class WP_NoteUp_Templates extends WP_NoteUp_Core {
 
 	/**
 	 * Current template loaded.
@@ -21,10 +21,8 @@ class WP_NoteUp_Templates extends WP_NoteUp_Base {
 	 *
 	 * @return string The value of the noteup.
 	 */
-	function get_noteup( $context, $post ) {
-		if ( 'post' == $context ) {
-			return apply_filters( 'wp_noteup_get_noteup', get_post_meta( $post->ID, 'wp-noteup', true ) );
-		}
+	function get_noteup( $post ) {
+		return apply_filters( 'wp_noteup_get_noteup', get_post_meta( $post->ID, 'wp-noteup', true ) );
 	}
 
 	/**
