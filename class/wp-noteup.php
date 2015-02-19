@@ -9,13 +9,6 @@ class WP_NoteUp extends WP_NoteUp_Core {
 	 */
 	public $templates;
 
-	/**
-	 * Will hold a future pro version instance.
-	 *
-	 * @var Class
-	 */
-	public $pro;
-
 	function __construct() {
 
 		// Setup shared base.
@@ -23,11 +16,6 @@ class WP_NoteUp extends WP_NoteUp_Core {
 
 		// Attach Templates.
 		$this->templates = new WP_NoteUp_Templates();
-
-		// Pro version.
-		if ( class_exists( 'WP_NoteUp_Pro' ) ) {
-			$this->$pro = new WP_NoteUp_Pro();
-		}
 
 		// Hooks
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
