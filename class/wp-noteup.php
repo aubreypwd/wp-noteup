@@ -121,7 +121,7 @@ class WP_NoteUp extends WP_NoteUp_Core {
 	 */
 	function enqueue_scripts() {
 		wp_enqueue_script( 'wp-noteup-js', plugins_url( 'js/wp-noteup.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( 'wp-noteup-autosize', plugins_url( 'js/jquery.autosize.min.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'wp-noteup-js-autosize', plugins_url( 'js/jquery.autosize.min.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
 	}
 
 	/**
