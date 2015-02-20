@@ -2,6 +2,8 @@
 
 WP NoteUp allows you to take simple notes when editing your Posts and Pages.
 
-_____________
+# Changelog
 
-_This is currently in development_
+# 1.0
+
+- Initial release that allows simple text notes on Posts and Pages
