@@ -5,7 +5,7 @@ Plugin Name: WP NoteUp
 Plugin URI:
 Description:
 Author: Aubrey Portwood
-Version: 1.0-dev
+Version: 1.0-alpha1
 Author URI:
 Text Domain: wp-noteup
 */

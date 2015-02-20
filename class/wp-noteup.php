@@ -38,8 +38,6 @@ class WP_NoteUp extends WP_NoteUp_Core {
 			return;
 		}
 
-		// TODO: Check that the user can save the post type.
-
 		// Get the noteup
 		$wp_noteup = $this->get_request( 'wp-noteup-textarea', array( $this, 'sanitize_wp_noteup_textarea' ) );
 
@@ -123,7 +121,7 @@ class WP_NoteUp extends WP_NoteUp_Core {
 	 */
 	function enqueue_scripts() {
 		wp_enqueue_script( 'wp-noteup-js', plugins_url( 'js/wp-noteup.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( 'wp-noteup-autosize', plugins_url( 'js/jquery.autosize.min.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'wp-noteup-js-autosize', plugins_url( 'js/jquery.autosize.min.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
 	}
 
 	/**
