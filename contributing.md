@@ -3,10 +3,18 @@
 All that is required, code wise, is that you follow all the
 [WordPress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards).
 
+## /develop or /master
+
+The `master` branch holds the most up to date released code. Please base your
+Pull Requests off of the `develop` branch. Security or hotfixes should
+be branched off `master`.
+
 ## Pull Requests
 
 If you feel like your Pull Request is ready to be merged in, please add the
 `ready-for-merge` label.
+
+**All Pull Requests should be compared to `develop`.**
 
 ### Resolves #
 
