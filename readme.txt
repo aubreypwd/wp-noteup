@@ -2,7 +2,7 @@
 Contributors: aubreypwd
 Donate link: http://github.com/aubreypwd/wp-noteup
 Tags: notes, note, markup, text, footnotes, research
-Requires at least: 4.1
+Requires at least: 3.8
 Tested up to: 4.1
 Stable tag: 1.0
 License: GPLv2 or later
@@ -21,8 +21,8 @@ WP NoteUp is developed over at [GitHub](http://github.com/aubreypwd/wp-noteup).
 
 == Installation ==
 
-Install by uploading the .zip, or by searching for this plugin,
-from WordPress Dashboard > Plugins > Add New.
+Install by going to your WordPress Dashboard > Plugins > Add New and searching
+for "WP NoteUp."
 
 == Screenshots ==
 
