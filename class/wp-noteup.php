@@ -38,8 +38,6 @@ class WP_NoteUp extends WP_NoteUp_Core {
 			return;
 		}
 
-		// TODO: Check that the user can save the post type.
-
 		// Get the noteup
 		$wp_noteup = $this->get_request( 'wp-noteup-textarea', array( $this, 'sanitize_wp_noteup_textarea' ) );
 
