@@ -1,0 +1,4 @@
+Autosize 1.18.17
+license: MIT
+http://www.jacklmoore.com/autosize
+Located in: js/jquery.autosize.min.js
