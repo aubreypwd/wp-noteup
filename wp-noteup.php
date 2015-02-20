@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: WP NoteUp
-Plugin URI:
-Description:
+Plugin URI: https://github.com/aubreypwd/wp-noteup
+Description: WP NoteUp allows you to take simple notes when you're editing your Posts or Pages.
 Author: Aubrey Portwood
-Version: 1.0-alpha1
-Author URI:
+Version: 1.0-alpha2
+Author URI: http://aubreypwd.com/
 Text Domain: wp-noteup
 */
 
