@@ -27,7 +27,7 @@ class WP_NoteUp_CMB2 {
 
 	function cmb2() {
 		$this->cmb2 = new_cmb2_box( apply_filters( 'wp_noteup_cmb2', array(
-			'id'            => 'wp_noteup_cmb2',
+			'id'            => 'wp-noteup-cmb2',
 			'title'         => 'NoteUp',
 			'object_types'  => array( 'post', 'page', ), // Post
 			'context'       => 'side',
@@ -40,7 +40,7 @@ class WP_NoteUp_CMB2 {
 
 		$this->cmb2->add_field( apply_filters( 'wp_noteup_cmb2_field', array(
 			'name'    => 'Test wysiwyg',
-			'id'      => 'wp_noteup',
+			'id'      => 'wp-noteup',
 			'type'    => 'wysiwyg',
 			'options' => array(
 				'wpautop' => true, // use wpautop?
