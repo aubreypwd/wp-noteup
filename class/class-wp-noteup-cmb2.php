@@ -44,14 +44,33 @@ class WP_NoteUp_CMB2 {
 			'type'    => 'wysiwyg',
 			'options' => array(
 				'wpautop' => true, // use wpautop?
-				'media_buttons' => false, // show insert/upload button(s)
+				'media_buttons' => true, // show insert/upload button(s)
 				'textarea_rows' => 8,
 				// 'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
 				// 'editor_class' => 'wp-noteup-tiny-mce', // add extra class(es) to the editor textarea
 				'teeny' => true, // output the minimal editor config used in Press This
 				'dfw' => true, // replace the default fullscreen with DFW (needs specific css)
 				'tinymce' => array(
-					'content_css' => '',
+					// 'remove_linebreaks'            => false,
+					// 'gecko_spellcheck'             => false,
+					// 'keep_styles'                  => true,
+					// 'accessibility_focus'          => true,
+					// 'tabfocus_elements'            => 'major-publishing-actions',
+					// 'media_strict'                 => false,
+					'paste_remove_styles'          => true,
+					'paste_remove_spans'           => true,
+					'paste_strip_class_attributes' => true,
+					// 'paste_text_use_dialog'        => true,
+					'wpeditimage_disable_captions' => true,
+					// 'plugins'                      => 'tabfocus,paste,media,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,wpfullscreen',
+					'content_css'                  => false,
+					// 'wpautop'                      => true,
+					// 'apply_source_formatting'      => false,
+					// 'block_formats'                => "Paragraph = p; Heading 3 = h3; Heading 4 = h4",
+					'toolbar1'                     => 'bold,italic,link,unlink',
+					// 'toolbar2'                     => 'formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help ',
+					// 'toolbar3'                     => '',
+					// 'toolbar4'                     => '',
 				), // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
 				'quicktags' => false // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 			),
