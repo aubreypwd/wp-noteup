@@ -27,21 +27,25 @@ if ( ! function_exists( 'wp_noteup_init' ) ) {
 	function wp_noteup_init() {
 		global $wp_noteup_instances;
 
-		// Files
+		// Files (last one on bottom).
 		require_once( 'class/class-wp-noteup-plugin.php' );
-		require_once( 'class/class-wp-noteup.php' );
+		require_once( 'class/class-wp-noteup-core.php' );
 		require_once( 'class/class-wp-noteup-cmb2.php' );
 		require_once( 'class/class-wp-noteup-next-addon.php' );
 
-		// Base class.
-		$wp_noteup_instances['WP_NoteUp_Plugin'] = new WP_NoteUp_Plugin();
-
-		// Noteup
-		$wp_noteup_instances['WP_NoteUp_Core'] = new WP_NoteUp_Core();
-
-		// Extends
-		$wp_noteup_instances['WP_NoteUp_CMB2'] = new WP_NoteUp_CMB2();
+		// Instances (last one on top).
 		$wp_noteup_instances['WP_NoteUp_Next_Addon'] = new WP_NoteUp_Next_Addon();
+		$wp_noteup_instances['WP_NoteUp_CMB2'] = new WP_NoteUp_CMB2();
+		$wp_noteup_instances['WP_NoteUp_Core'] = new WP_NoteUp_Core();
+		$wp_noteup_instances['WP_NoteUp_Plugin'] = new WP_NoteUp_Plugin();
+	}
+
+	function wp_noteup_instance( $instance ) {
+		global $wp_noteup_instances;
+
+		if ( isset( $wp_noteup_instances[ $instance ] ) ) {
+			return $wp_noteup_instances[ $instance ];
+		}
 	}
 
 } else {
