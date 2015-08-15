@@ -46,8 +46,8 @@ class WP_NoteUp_CMB2 {
 				'wpautop' => true, // use wpautop?
 				'media_buttons' => false, // show insert/upload button(s)
 				'textarea_rows' => 8,
-				'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
-				'editor_class' => 'wp-noteup-tiny-mce', // add extra class(es) to the editor textarea
+				// 'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
+				// 'editor_class' => 'wp-noteup-tiny-mce', // add extra class(es) to the editor textarea
 				'teeny' => true, // output the minimal editor config used in Press This
 				'dfw' => true, // replace the default fullscreen with DFW (needs specific css)
 				'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
