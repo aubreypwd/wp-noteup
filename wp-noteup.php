@@ -21,10 +21,12 @@ if ( ! function_exists( 'wp_noteup_init' ) ) {
 	function wp_noteup_init() {
 
 		// The classes.
+		require_once( 'class/class-wp-noteup-plugin.php' );
 		require_once( 'class/class-wp-noteup.php' );
 
 		// Instances.
-		$wp_noteup_base = new WP_NoteUp();
+		$wp_noteup_core = new WP_NoteUp_Plugin(); // Plugin functions like versions, etc.
+		$wp_noteup      = new WP_NoteUp(); // NoteUp Base.
 	}
 } else {
 	wp_die( __( 'Sorry but we can\'t activate WP NoteUp because it appears to be colliding with another theme or plugin.', 'wp-noteup' ) );
