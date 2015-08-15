@@ -58,8 +58,8 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		}
 	}
 
+	wp_noteup_init();
+
 } else {
 	wp_die( __( 'Sorry but we can\'t activate WP NoteUp because it appears to be colliding with another theme or plugin.', 'wp-noteup' ) );
 }
-
-add_action( 'init', 'wp_noteup_init' );
