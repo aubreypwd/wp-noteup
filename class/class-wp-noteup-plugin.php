@@ -1,6 +1,8 @@
 <?php
 
 class WP_NoteUp_Plugin {
+	public $WP_NoteUp_Plugin; // Set at least one var for testing proper extends.
+
 	public $plugin_file;
 	public $version;
 	public $plugin_headers;
