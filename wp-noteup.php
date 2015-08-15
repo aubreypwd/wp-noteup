@@ -14,17 +14,32 @@ Text Domain: wp-noteup
 if ( ! function_exists( 'wp_noteup_init' ) ) {
 
 	/**
+	 * A cheater way to access other instances.
+	 * @var array
+	 */
+	$wp_noteup_instances = array();
+
+	/**
 	 * Creates our WP_NoteUp instance.
 	 *
 	 * @return void
 	 */
 	function wp_noteup_init() {
+		global $wp_noteup_instances;
 
-		// INIT
+		// Files
 		require_once( 'class/class-wp-noteup-plugin.php' );
+		require_once( 'class/class-wp-noteup.php' );
+		require_once( 'class/class-wp-noteup-cmb2.php' );
 
-		$wp_noteup_core = new WP_NoteUp_Plugin(); // Plugin functions like versions, etc.
+		// Base class.
+		$wp_noteup_instances['WP_NoteUp_Plugin'] = new WP_NoteUp_Plugin();
+
+		// Extends
+		$wp_noteup_instances['WP_NoteUp_Core'] = new WP_NoteUp_Core();
+		$wp_noteup_instances['WP_NoteUp_CMB2'] = new WP_NoteUp_CMB2();
 	}
+
 } else {
 	wp_die( __( 'Sorry but we can\'t activate WP NoteUp because it appears to be colliding with another theme or plugin.', 'wp-noteup' ) );
 }

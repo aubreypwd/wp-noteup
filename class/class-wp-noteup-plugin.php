@@ -6,15 +6,7 @@ class WP_NoteUp_Plugin {
 	public $plugin_headers;
 	public $plugin_dir;
 
-	// Instances
-	public $wp_noteup;
-	public $wp_noteup_cmb2;
-
-	function __construct( $args = array() ) {
-		$args = wp_parse_args( $args, array(
-			'requesting_subclass' => false,
-		) );
-
+	function __construct() {
 		// Plugin information.
 		$this->set_plugin_file( dirname( __FILE__ ) . '/../wp-noteup.php' );
 		$this->set_plugin_info();
@@ -25,31 +17,6 @@ class WP_NoteUp_Plugin {
 		// Hooks
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-
-		if ( ! $args['requesting_subclass'] ) {
-			// All the parts of the plugin.
-			$this->init_sub_classes( $args['requesting_subclass'] );
-		}
-	}
-
-	/**
-	 * Loads a subclass, as long as it's not requested by that subclass.
-	 *
-	 * @param  string $sub_class The classname.
-	 */
-	function init_sub_classes( $sub_class ) {
-
-		// WP NoteUp.
-		if ( 'WP_NoteUp' != $sub_class ) {
-			require_once( 'class-wp-noteup.php' );
-			$this->wp_noteup = new WP_NoteUp();
-		}
-
-		// CMB2 Module.
-		if ( 'WP_NoteUp_CMB2' != $sub_class ) {
-			require_once( 'class-wp-noteup-cmb2.php' );
-			$this->wp_noteup_cmb2 = new WP_NoteUp_CMB2();
-		}
 	}
 
 	/**

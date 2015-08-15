@@ -1,8 +1,9 @@
 <?php
 
-class WP_NoteUp_CMB2 extends WP_NoteUp_Plugin {
+class WP_NoteUp_CMB2 extends WP_NoteUp_Core {
 	function __construct() {
-		parent::__construct( array( 'requesting_subclass' => get_class( $this ), ) );
+		parent::__construct();
+
 		$this->include_cmb2();
 	}
 
