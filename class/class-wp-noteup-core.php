@@ -2,10 +2,8 @@
 
 class WP_NoteUp_Core {
 	function __construct() {
-		wp_die( "---" . wp_noteup_instance( 'WP_NoteUp_CMB2' ) );
-
-		if ( wp_noteup_instance( 'WP_NoteUp_CMB2' )->cmb2_loaded ) {
-			wp_die( 'cmb2 loaded' );
+		if ( ! wp_noteup( 'CMB2' )->cmb2_loaded ) {
+			return wp_noteup( 'Error' )->get_error( 'cmb2_not_loaded' );
 		}
 	}
 }

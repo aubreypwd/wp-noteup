@@ -11,7 +11,7 @@ Text Domain: wp-noteup
 */
 
 // Make sure we aren't colliding with another function (rare?).
-if ( ! function_exists( 'wp_noteup_init' ) ) {
+if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) && ! isset( $wp_noteup_instances ) ) {
 
 	/**
 	 * A cheater way to access other instances.
@@ -20,31 +20,41 @@ if ( ! function_exists( 'wp_noteup_init' ) ) {
 	$wp_noteup_instances = array();
 
 	/**
-	 * Creates our WP_NoteUp instance.
+	 * Creates our WP_NoteUp instances.
+	 *
+	 * Stores into an array that can be accessed later because
+	 * I hate extends.
 	 *
 	 * @return void
 	 */
 	function wp_noteup_init() {
 		global $wp_noteup_instances;
 
-		// Files (last one on bottom).
 		require_once( 'class/class-wp-noteup-plugin.php' );
-		require_once( 'class/class-wp-noteup-core.php' );
-		require_once( 'class/class-wp-noteup-cmb2.php' );
-		require_once( 'class/class-wp-noteup-next-addon.php' );
+		$wp_noteup_instances['WP_NoteUp_Plugin']     = new WP_NoteUp_Plugin();
 
-		// Instances (last one on top).
-		$wp_noteup_instances['WP_NoteUp_Next_Addon'] = new WP_NoteUp_Next_Addon();
-		$wp_noteup_instances['WP_NoteUp_CMB2'] = new WP_NoteUp_CMB2();
-		$wp_noteup_instances['WP_NoteUp_Core'] = new WP_NoteUp_Core();
-		$wp_noteup_instances['WP_NoteUp_Plugin'] = new WP_NoteUp_Plugin();
+		require_once( 'class/class-wp-noteup-cmb2.php' );
+		$wp_noteup_instances['WP_NoteUp_CMB2']       = new WP_NoteUp_CMB2();
+
+		require_once( 'class/class-wp-noteup-wp-error.php' );
+		$wp_noteup_instances['WP_NoteUp_WP_Error'] = new WP_NoteUp_WP_Error();
+
+		require_once( 'class/class-wp-noteup-core.php' );
+		$wp_noteup_instances['WP_NoteUp_Core']       = new WP_NoteUp_Core();
 	}
 
-	function wp_noteup_instance( $instance ) {
+	/**
+	 * Shorthand function for accessing class instances.
+	 *
+	 * @param  string $instance The name of the instance w/out WP_NoteUp_
+	 *
+	 * @return object           The instance.
+	 */
+	function wp_noteup( $instance ) {
 		global $wp_noteup_instances;
 
-		if ( isset( $wp_noteup_instances[ $instance ] ) ) {
-			return $wp_noteup_instances[ $instance ];
+		if ( isset( $wp_noteup_instances[ "WP_NoteUp_{$instance}" ] ) ) {
+			return $wp_noteup_instances[ "WP_NoteUp_{$instance}" ];
 		}
 	}
 
