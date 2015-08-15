@@ -50,7 +50,9 @@ class WP_NoteUp_CMB2 {
 				// 'editor_class' => 'wp-noteup-tiny-mce', // add extra class(es) to the editor textarea
 				'teeny' => true, // output the minimal editor config used in Press This
 				'dfw' => true, // replace the default fullscreen with DFW (needs specific css)
-				'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+				'tinymce' => array(
+					'content_css' => '',
+				), // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
 				'quicktags' => false // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 			),
 	) ) );
