@@ -3,7 +3,10 @@
 }
 
 .cmb2-id-wp-noteup .button.insert-media {
+	color: transparent;
+	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 5px;
+	width: 32px;
 }
