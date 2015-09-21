@@ -4,18 +4,10 @@ class WP_NoteUp_CMB2 {
 	public $cmb2_loaded = false;
 	public $cmb2;
 
-	function __construct() {
-		if ( $this->include_cmb2() ) {
-			add_action('cmb2_init', array( $this, 'cmb2' ) );
-		} else {
-			return wp_noteup( 'Error' )->get_error( 'cmb2_not_loaded' );
-		}
-	}
-
 	/**
 	 * Includes the plugin files.
 	 */
-	private function include_cmb2() {
+	public function include_cmb2() {
 		if ( ! class_exists( 'CMB2' ) ) {
 			if ( require_once( dirname( __FILE__) . '/../cmb2/init.php' ) ) {
 				return $this->cmb2_loaded = true;
@@ -25,7 +17,10 @@ class WP_NoteUp_CMB2 {
 		}
 	}
 
-	function cmb2() {
+	/**
+	 * Setup the CMB2 box.
+	 */
+	public function cmb2() {
 		$this->cmb2 = new_cmb2_box( apply_filters( 'wp_noteup_cmb2', array(
 			'id'            => 'wp-noteup-cmb2',
 			'title'         => 'NoteUp',
