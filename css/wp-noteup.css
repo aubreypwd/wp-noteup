@@ -2,7 +2,9 @@
 	padding: 10px 0 0 0 !important;
 }
 
-.cmb2-id-wp-noteup .button.insert-media {
+.cmb2-id-wp-noteup .button.insert-media,
+.cmb2-id-wp-noteup .button.insert-media:active,
+.cmb2-id-wp-noteup .button.insert-media:focus {
 	color: transparent;
 	overflow: hidden;
 	position: absolute;
