@@ -34,7 +34,7 @@ class WP_NoteUp_CMB2 {
 		) ) );
 
 		$this->cmb2->add_field( apply_filters( 'wp_noteup_cmb2_field', array(
-			'name'    => 'Test wysiwyg',
+			'name'    => __( 'NoteUp', 'wp-noteup' ),
 			'id'      => 'wp-noteup',
 			'type'    => 'wysiwyg',
 			'options' => array(
@@ -69,6 +69,6 @@ class WP_NoteUp_CMB2 {
 				), // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
 				'quicktags' => false // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 			),
-	) ) );
+		) ) );
 	}
 }
