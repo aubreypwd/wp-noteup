@@ -62,7 +62,7 @@ class WP_NoteUp_CMB2 {
 					// 'wpautop'                      => true,
 					// 'apply_source_formatting'      => false,
 					// 'block_formats'                => "Paragraph = p; Heading 3 = h3; Heading 4 = h4",
-					'toolbar1'                     => 'bold,italic,bullist', // TODO: Add link,unlink, when frontend notes are a thing
+					'toolbar1'                     => 'bold,italic,bullist,link,unlink',
 					// 'toolbar2'                     => 'formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help ',
 					// 'toolbar3'                     => '',
 					// 'toolbar4'                     => '',

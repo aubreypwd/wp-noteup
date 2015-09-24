@@ -10,7 +10,7 @@ WP NoteUp allows you to take simple notes when editing your Posts and Pages.
 
 - Added [CMB2](https://github.com/WebDevStudios/CMB2) to add more power to notes
 - Notes can now have formatting: images, bullets, bold, italic
-- Re-worked class structure for better code organization
+- Re-worked class structure
 
 # 1.0
 
