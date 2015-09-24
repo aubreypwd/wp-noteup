@@ -2,5 +2,6 @@
 .svn
 .hg
 deploy-git-wordpress-org/
+deploy-git-wordpress-org.sh
 /wp-noteup
 /*svn*
