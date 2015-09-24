@@ -33,3 +33,7 @@ for "WP NoteUp."
 == Development ==
 
 WP NoteUp is developed over at [GitHub](http://github.com/aubreypwd/wp-noteup).
+
+== Credits ==
+
+Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2)
