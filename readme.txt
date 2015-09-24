@@ -15,10 +15,6 @@ Take simple notes on your Posts and Pages.
 WP NoteUp allows you to take simple notes when you're editing your Posts
 or Pages.
 
-= Development =
-
-WP NoteUp is developed over at [GitHub](http://github.com/aubreypwd/wp-noteup).
-
 == Installation ==
 
 Install by going to your WordPress Dashboard > Plugins > Add New and searching
@@ -33,3 +29,7 @@ for "WP NoteUp."
 = 1.0 =
 
 - Initial release that allows simple text notes on Posts and Pages
+
+== Development ==
+
+WP NoteUp is developed over at [GitHub](http://github.com/aubreypwd/wp-noteup).
