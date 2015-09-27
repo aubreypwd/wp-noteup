@@ -12,4 +12,4 @@ is considered the alpha and beta material.
 If you feel like your Pull Request is ready to be merged in, please add the
 `ready-for-merge` label and it will be reviewed.
 
-**Please include which issue your PR resolves in the description of your PR**
+Please include which issue your PR resolves in the description of your PR.
