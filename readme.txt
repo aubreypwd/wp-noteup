@@ -26,9 +26,13 @@ for "WP NoteUp."
 
 == Changelog ==
 
-= 1.0 =
+= 1.1 "Cube" =
 
-- Initial release that allows simple text notes on Posts and Pages
+- Notes can now have formatting: images, bullets, bold, italic. Special thanks to the [CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com)
+
+= 1.0 "Dre" =
+
+* Initial release that allows simple text notes on Posts and Pages
 
 == Development ==
 
