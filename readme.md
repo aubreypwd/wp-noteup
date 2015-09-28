@@ -6,6 +6,10 @@ WP NoteUp allows you to take simple notes when editing your Posts and Pages.
 
 The naming theme for releases come from [N.W.A.](https://en.wikipedia.org/wiki/N.W.A).
 
+## 1.1.1
+
+- Small fix to NoteUp box when other media buttons (like Gravity Forms) are present
+
 ## 1.1 "Cube"
 
 - Added [CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com) for more formatting options
