@@ -26,6 +26,11 @@ for "WP NoteUp."
 
 == Changelog ==
 
+= 1.1.3 =
+
+Yet another small change in hopes that activation through WordPress.org
+is again possible.
+
 = 1.1.2 =
 
 Another small tweak fixing the issue people are having activating the plugin.

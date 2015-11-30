@@ -4,6 +4,10 @@ WP NoteUp allows you to take simple notes when editing your Posts and Pages.
 
 # Changelog
 
+## 1.1.3
+
+- Change/remove the CMB2 plugin header in hopes that removing that will stop the "Plugin header not valid" issue.
+
 ## 1.1.2
 
 - Small change to the header of the plugin so people can activate the plugin
