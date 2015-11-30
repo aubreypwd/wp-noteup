@@ -4,7 +4,9 @@ WP NoteUp allows you to take simple notes when editing your Posts and Pages.
 
 # Changelog
 
-The naming theme for releases come from [N.W.A.](https://en.wikipedia.org/wiki/N.W.A).
+## 1.1.2
+
+- Small change to the header of the plugin so people can activate the plugin
 
 ## 1.1.1
 
