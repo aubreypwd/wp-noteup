@@ -2,14 +2,11 @@
 
 Please follow all [WordPress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards).
 
-## The `master` Branch
+## `master`
 
-The master branch has all the latest code and merged PR's for the next release and
-is considered the alpha and beta material.
+The `master` branch always has a dirty copy of the latest released code, it is _not
+a development branch_.
 
-## Pull Requests
-
-If you feel like your Pull Request is ready to be merged in, please add the
-`ready-for-merge` label and it will be reviewed.
-
-Please include which issue your PR resolves in the description of your PR.
+If you submit a PR based on the `master` branch you will be submitting a PR based
+on the last released code. That's not always bad, but please check for other
+active future release branches to base your PR's off of.
