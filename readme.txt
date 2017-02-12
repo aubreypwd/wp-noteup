@@ -3,8 +3,8 @@ Contributors: aubreypwd
 Donate link: http://github.com/aubreypwd/wp-noteup
 Tags: notes, note, markup, text, footnotes, research
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.1.3
+Tested up to: 4.7.2
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
