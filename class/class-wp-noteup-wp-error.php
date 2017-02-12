@@ -2,10 +2,28 @@
 
 /**
  * Place to keep all the error messages.
+ *
+ * @author Aubrey Portwood
+ * @since  Unknown
  */
 class WP_NoteUp_WP_Error {
+
+	/**
+	 * The errors.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  Unknown
+	 *
+	 * @var object WP_Error object.
+	 */
 	private $errors;
 
+	/**
+	 * Construct.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  Unknown
+	 */
 	function __construct() {
 		$this->errors = array(
 			'cmb2_not_loaded' => new WP_Error( '1', __( 'Our CMB2 library failed to load.', 'wp-noteup' ) ),
@@ -14,6 +32,9 @@ class WP_NoteUp_WP_Error {
 
 	/**
 	 * Gets the error message by slug so we present the right error code.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  Unknown
 	 *
 	 * @param  string $error_slug   The slug of the error.
 	 *

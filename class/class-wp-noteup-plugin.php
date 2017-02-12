@@ -1,13 +1,58 @@
 <?php
 
+/**
+ * Base plugin class.
+ *
+ * @author Aubrey Portwood
+ * @since  1.0.0
+ */
 class WP_NoteUp_Plugin {
-	public $WP_NoteUp_Plugin; // Set at least one var for testing proper extends.
 
+	/**
+	 * The plugin file.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
+	 *
+	 * @var string
+	 */
 	public $plugin_file;
+
+	/**
+	 * The plugin version (from the plugin header).
+	 *
+	 * @author Aubrey Portwood
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
 	public $version;
+
+	/**
+	 * The plugin header info.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
+	 * @var array
+	 */
 	public $plugin_headers;
+
+	/**
+	 * The plugin directory.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
+	 *
+	 * @var string.
+	 */
 	public $plugin_dir;
 
+	/**
+	 * Construct.
+	 *
+	 * @author Aubrey Portwood
+	 * @since 1.0.0
+	 */
 	function __construct() {
 		// Plugin information.
 		$this->set_plugin_file( dirname( __FILE__ ) . '/../wp-noteup.php' );
@@ -24,6 +69,8 @@ class WP_NoteUp_Plugin {
 	/**
 	 * Set the plugin header info.
 	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
 	 * @return void
 	 */
 	function set_plugin_info() {
@@ -42,9 +89,12 @@ class WP_NoteUp_Plugin {
 	/**
 	 * Get a particular header value.
 	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
+	 *
 	 * @param  string $key The value of the plugin header.
 	 *
-	 * @return void
+	 * @return array       The plugin headers.
 	 */
 	function get_plugin_info( $key ) {
 		return $this->plugin_headers[ $key ];
@@ -53,9 +103,10 @@ class WP_NoteUp_Plugin {
 	/**
 	 * Set the plugin file and plugin directory.
 	 *
-	 * @param string $file Usually __FILE__.
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
 	 *
-	 * @return void
+	 * @param string $file Usually __FILE__.
 	 */
 	function set_plugin_file( $file ) {
 		$this->plugin_file = $file;
@@ -64,6 +115,9 @@ class WP_NoteUp_Plugin {
 
 	/**
 	 * Get the value from $_REQUEST and apply filters to it.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
 	 *
 	 * @param  string  $key The key in $_REQUEST[$key].
 	 * @param  array $filter The filter to run in the format of array( $instance, 'callback' ).
@@ -86,17 +140,32 @@ class WP_NoteUp_Plugin {
 	/**
 	 * Get the value of the noteup.
 	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
+	 *
 	 * @param string $context The context for what the meta value is.
 	 * @param mixed $post Any data needed to be passed, usually $post.
 	 *
 	 * @return string The value of the noteup.
 	 */
 	function get_noteup( $post ) {
+
+		/**
+		 * Filter the noteup data.
+		 *
+		 * @author Aubrey Portwood
+		 * @since 1.0.0
+		 *
+		 * @var  string The data (note).
+		 */
 		return apply_filters( 'wp_noteup_get_noteup', get_post_meta( $post->ID, 'wp-noteup', true ) );
 	}
 
 	/**
 	 * Enqueue all the scripts.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
 	 *
 	 * @return void
 	 */
@@ -107,6 +176,9 @@ class WP_NoteUp_Plugin {
 
 	/**
 	 * Enqueue all the styles.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.0.0
 	 *
 	 * @return void
 	 */
