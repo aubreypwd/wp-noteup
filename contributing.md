@@ -1,4 +1,3 @@
 # Contributing
 
-For more information on contributing, please see [this information](https://github.com/aubreypwd/contributing).
-
+For information on contributing see [readme.md](readme.md).
