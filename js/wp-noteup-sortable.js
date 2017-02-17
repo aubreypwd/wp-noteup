@@ -61,20 +61,11 @@ if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
 			} );
 		}
 
-		/**
-		 * Initialization.
-		 *
-		 * @author Aubrey Portwood
-		 * @since  1.4
-		 */
-		function init() {
+		// Fix sortable when page is ready.
+		$( document ).ready( fixSortableIssue );
 
-			// Fix sortable when page finishes loading.
-			$( document ).ready( fixSortableIssue );
-		}
-
-		// On load, init!
-		init();
+		// Pass back to base class :).
+		window.WPNoteUp.modules.push( 'sortable', pub );
 
 		// Send back our public object.
 		return pub;

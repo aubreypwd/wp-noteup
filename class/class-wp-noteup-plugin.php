@@ -170,29 +170,29 @@ class WP_NoteUp_Plugin {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( 'wp-noteup-js', plugins_url( 'js/wp-noteup.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( 'wp-noteup-js-autosize', plugins_url( 'js/jquery.autosize.min.js', $this->plugin_file ), array( 'jquery' ), $this->version, false );
-
-		$this->enqueue_script_sortable();
+		$this->enqueue_only_on_post_edit_screen();
 	}
 
 	/**
-	 * Enqueue script to fix sortable issue.
+	 * Enqueue scripts only on the edit screen.
 	 *
 	 * Only enqueued on the post screen.
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1.4
 	 */
-	private function enqueue_script_sortable() {
+	private function enqueue_only_on_post_edit_screen() {
 
 		// The current screen in the admin.
 		$screen = get_current_screen();
 
 		if ( is_a( $screen, 'WP_Screen' ) && 'post' === $screen->base ) {
 
-			// Only enqueue if we're on the post edit screen.
-			wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery', 'wp-noteup-js' ), $this->version, false );
+			// Add our shared/base Js.
+			wp_enqueue_script( 'wp-noteup-js', plugins_url( 'js/wp-noteup.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
+
+			// Fix sortable issue.
+			wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery', 'wp-noteup-js' ), $this->version, true );
 		}
 	}
 

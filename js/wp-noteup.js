@@ -3,7 +3,7 @@
 if ( ! window.hasOwnProperty( 'WPNoteUp' ) ) {
 
 	/*
-	 * Main Module.
+	 * Shared Functionality Module.
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1.4
@@ -11,37 +11,16 @@ if ( ! window.hasOwnProperty( 'WPNoteUp' ) ) {
 	window.WPNoteUp = ( function( $, pub ) {
 
 		/**
-		 * Fix autosize issue.
+		 * Modules.
 		 *
 		 * @author Aubrey Portwood
 		 * @since  1.1.4
-		 */
-		function autoAutosize() {
-
-			// Make sure that the textarea always auto-sizes.
-			var $textarea = $( '.wp-noteup-textarea' );
-
-			if ( $textarea.hasOwnProperty( 'autosize' ) ) {
-
-				// Only when we can autosize.
-				$textarea.autosize();
-			}
-		}
-
-		/**
-		 * Initialization.
 		 *
-		 * @author Aubrey Portwood
-		 * @since  1.4
+		 * When individual modules are loaded, their public functions are stacked here.
+		 *
+		 * @type {Array}
 		 */
-		function init() {
-
-			// Page loaded.
-			$( document ).ready( autoAutosize );
-		}
-
-		// On load, init!
-		init();
+		pub.modules = [];
 
 		// Send back our public object.
 		return pub;
