@@ -1,8 +1,8 @@
 # Make WP NoteUp
 
-[Checkout WP NoteUp on WordPress.org](https://wordpress.org/plugins/wp-noteup/)
-
 ![Screenshot](https://cloudup.com/cKtfRa-MxFQ+)
+
+[Checkout WP NoteUp on WordPress.org](https://wordpress.org/plugins/wp-noteup/)
 
 # Contributing
 
