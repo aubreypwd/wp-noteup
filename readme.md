@@ -1,4 +1,4 @@
-# Make WP NoteUp
+# WP NoteUp
 
 ![Screenshot](https://cloudup.com/cKtfRa-MxFQ+)
 
