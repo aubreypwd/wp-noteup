@@ -4,6 +4,8 @@
 
 [Checkout WP NoteUp on WordPress.org](https://wordpress.org/plugins/wp-noteup/)
 
+_____________________________
+
 # Contributing
 
 All development follows the information [outlined here](https://github.com/aubreypwd/contributing).
