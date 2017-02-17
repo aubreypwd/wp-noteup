@@ -30,9 +30,11 @@ for "WP NoteUp."
 
 Major fixes to work with WordPress 4.7.2!
 
-Notes were also lost when the postbox was moved around from the side to the
-"normal" area and back. So, for now, we've disabled the NoteUp metabox from
-being in side, and do not allow it to be dragged around to different areas.
+Notes were lost when the postbox was moved around from the side to the
+"normal" area and back in the Post edit screen.
+
+So, for now, we've disabled the NoteUp metabox from being in side,
+and do not allow it to be dragged around to different areas.
 Don't worry, we don't break any of your other post-boxes!
 
 = 1.1.3 =
