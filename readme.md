@@ -7,3 +7,4 @@
 - [Closed Issues](https://github.com/aubreypwd/wp-noteup/milestone/6?closed=1)
 - [Download](https://github.com/aubreypwd/wp-noteup/releases/tag/1.1.4)
 - [1.1.4 PR](https://github.com/aubreypwd/wp-noteup/pull/53)
+- [WordPress.org Changelog](readme.txt)
