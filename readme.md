@@ -6,6 +6,6 @@
 
 All development follows the information [outlined here](https://github.com/aubreypwd/contributing).
 
-# ![Slack Icon](https://lh3.googleusercontent.com/apGWfZXbxUK1iz15gFj8MOanjm1iTZIUf0THWKY3kjwJfsTYG4lnHyzTuJ8Igynp5HtIvGz4=s50-h50-e365) Chat
+# ![Slack Icon](https://cdn-images-1.medium.com/fit/c/40/40/1*TiKyhAN2gx4PpbOsiBhYcw.png) Chat
 
 What to chat? [Find out how to on Slack](https://github.com/aubreypwd/contributing/blob/master/3.md).
