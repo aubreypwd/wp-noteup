@@ -1,5 +1,9 @@
 # WP NoteUp 1.4.1
 
+![Screenshot](https://cloudup.com/cKtfRa-MxFQ+)
+
+____________________________
+
 ## Release Focus
 
 Major fixes to work with WordPress 4.7.2!
@@ -10,8 +14,6 @@ Notes were lost when the postbox was moved around from the side to the
 So, for now, we've disabled the NoteUp metabox from being in side,
 and do not allow it to be dragged around to different areas.
 Don't worry, we don't break any of your other post-boxes!
-
-![Screenshot](https://cloudup.com/cKtfRa-MxFQ+)
 
 ## Developer Notes
 
