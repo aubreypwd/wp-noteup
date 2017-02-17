@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: WP NoteUp
 Plugin URI: https://wordpress.org/plugins/wp-noteup/
