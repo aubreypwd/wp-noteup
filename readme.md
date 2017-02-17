@@ -8,4 +8,4 @@ All development follows the information [outlined here](https://github.com/aubre
 
 # Chat
 
-What to chat? [Find out how to on Slack](https://github.com/aubreypwd/contributing/blob/master/3.md).
+What to chat? [Find out how to on aubreypwd.slack.com](https://github.com/aubreypwd/contributing/blob/master/3.md).
