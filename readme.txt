@@ -55,24 +55,15 @@ box.
 
 This major update, dubbed Cube, was entirely focused on updating the experience
 of note taking to include formatting and media. Special thanks to the
-[CMB2](https://github.com/WebDevStudios/CMB2) crew
-[@webdevstudios](http://webdevstudios.com).
-
-[Read More](http://aubreypwd.com/wp-noteup-1-1-cube/)
+[CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com).
 
 = 1.0 =
 
-* Initial release that allows simple text notes on Posts and Pages
+Initial release that allows simple text notes on Posts and Pages.
 
 == Development & Bugs ==
 
-WP NoteUp is now developed entirely on it's own SVN and uses Trac as a
-bug tracker and feature tracker.
-
-You can view all [Trac Tickets here](https://plugins.trac.wordpress.org/query?keywords=~wp-noteup),
-or create a [New Ticket](https://plugins.trac.wordpress.org/newticket?keywords=wp-noteup&owner=aubreypwd).
-
-To contribute feel free to submit patches!
+NoteUp is developed with sparkle-dust on [Github](https://github.com/aubreypwd/wp-noteup)!
 
 == Credits ==
 
