@@ -1,31 +1,65 @@
 <?php
 
+/**
+ * Noteup CMB2 Setup.
+ *
+ * @author Aubrey Portwood
+ * @since  1.1
+ */
 class WP_NoteUp_CMB2 {
+
+	/**
+	 * Is CMB2 already loaded?
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.1
+	 *
+	 * @var boolean
+	 */
 	public $cmb2_loaded = false;
+
+	/**
+	 * CMB2 instance.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.1
+	 *
+	 * @var    object CMB2_Boxes
+	 */
 	public $cmb2;
 
 	/**
 	 * Includes the plugin files.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.1
 	 */
 	public function include_cmb2() {
+
 		if ( ! class_exists( 'CMB2' ) ) {
-			if ( require_once( dirname( __FILE__) . '/../cmb2/init.php' ) ) {
-				return $this->cmb2_loaded = true;
+			if ( require_once( dirname( __FILE__ ) . '/../cmb2/init.php' ) ) {
+				$this->cmb2_loaded = true;
+				return $this->cmb2_loaded;
 			}
 		} else {
-			return $this->cmb2_loaded = true;
+			$this->cmb2_loaded = true;
+			return $this->cmb2_loaded;
 		}
 	}
 
 	/**
 	 * Setup the CMB2 box.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.1
 	 */
 	public function cmb2() {
+
 		$this->cmb2 = new_cmb2_box( apply_filters( 'wp_noteup_cmb2', array(
 			'id'            => 'wp-noteup-cmb2',
 			'title'         => 'NoteUp',
-			'object_types'  => array( 'post', 'page', ), // Post
-			'context'       => 'side',
+			'object_types'  => array( 'post', 'page' ), // Post
+			'context'       => 'normal',
 			// 'priority'      => 'high',
 			'show_names'    => false, // Show field names on the left
 			// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
@@ -67,7 +101,7 @@ class WP_NoteUp_CMB2 {
 					// 'toolbar3'                     => '',
 					// 'toolbar4'                     => '',
 				), // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-				'quicktags' => false // load Quicktags, can be used to pass settings directly to Quicktags using an array()
+				'quicktags' => false, // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 			),
 		) ) );
 	}
