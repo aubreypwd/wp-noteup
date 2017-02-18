@@ -5,3 +5,5 @@ deploy-git-wordpress-org/
 deploy-git-wordpress-org.sh
 /wp-noteup
 /*svn*
+node_modules
+/svn

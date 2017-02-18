@@ -1,28 +1,36 @@
-# WP NoteUp
+# WP NoteUp 1.4.1
 
-WP NoteUp allows you to take simple notes when editing your Posts and Pages.
+![Screenshot](https://cloudup.com/cKtfRa-MxFQ+)
 
-# Changelog
+____________________________
 
-## 1.1.3
+## Release Focus
 
-- Change/remove the CMB2 plugin header in hopes that removing that will stop the "Plugin header not valid" issue.
+Major fixes to work with WordPress 4.7.2!
 
-## 1.1.2
+Notes were lost when the postbox was moved around from the side to the
+"normal" area and back in the Post edit screen.
 
-- Small change to the header of the plugin so people can activate the plugin
+So, for now, we've disabled the NoteUp metabox from being in side,
+and do not allow it to be dragged around to different areas.
+Don't worry, we don't break any of your other post-boxes!
 
-## 1.1.1
+## Developer Notes
 
-- Small fix to NoteUp box when other media buttons (like Gravity Forms) are present
+There was a bit of refactoring of how JS works, using the Module structure as
+closely as possible. Also a lot of code was stripped from the textarea version
+from 1.0 that was still lingering around.
 
-## 1.1 "Cube"
+Grunt was also added to help with deployments to WordPress.org and CMB2 was updated
+to the latest version.
 
-- Added [CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com) for more formatting options
-- Re-worked code class structure for easier development going forward
+That's about it!
 
-[Post on aubreypwd.com](http://aubreypwd.com/wp-noteup-1-1-cube/)
+- [Checkout WP NoteUp on WordPress.org](https://wordpress.org/plugins/wp-noteup/)
+- [Contributing](https://github.com/aubreypwd/contributing)
+- [Closed Issues](https://github.com/aubreypwd/wp-noteup/milestone/6?closed=1)
+- [Download](https://github.com/aubreypwd/wp-noteup/releases/tag/1.1.4)
+- [1.1.4 PR](https://github.com/aubreypwd/wp-noteup/pull/53)
+- [WordPress.org Changelog](readme.txt)
 
-## 1.0 "Dre"
 
-- Initial release that allows simple text notes on Posts and Pages

@@ -3,17 +3,17 @@ Contributors: aubreypwd
 Donate link: http://github.com/aubreypwd/wp-noteup
 Tags: notes, note, markup, text, footnotes, research
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.1.3
+Tested up to: 4.7.2
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Take simple notes on your Posts and Pages.
+Take notes on your posts and pages.
 
 == Description ==
 
-WP NoteUp allows you to take simple notes when you're editing your Posts
-or Pages.
+WP NoteUp allows you to take simple notes when you're editing your posts
+or pages.
 
 == Installation ==
 
@@ -25,6 +25,17 @@ for "WP NoteUp."
 1. WP NoteUp in a Post
 
 == Changelog ==
+
+= 1.1.4 =
+
+Major fixes to work with WordPress 4.7.2!
+
+Notes were lost when the postbox was moved around from the side to the
+"normal" area and back in the Post edit screen.
+
+So, for now, we've disabled the NoteUp metabox from being in side,
+and do not allow it to be dragged around to different areas.
+Don't worry, we don't break any of your other post-boxes!
 
 = 1.1.3 =
 
@@ -42,19 +53,18 @@ box.
 
 = 1.1 =
 
-This major update, dubbed Cube, was entirely focused on updating the experience of note taking to
-include formatting and media. Special thanks to the [CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com).
-
-[Read More](http://aubreypwd.com/wp-noteup-1-1-cube/)
+This major update, dubbed Cube, was entirely focused on updating the experience
+of note taking to include formatting and media. Special thanks to the
+[CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com).
 
 = 1.0 =
 
-* Initial release that allows simple text notes on Posts and Pages
+Initial release that allows simple text notes on Posts and Pages.
 
-== Development ==
+== Development & Bugs ==
 
-WP NoteUp is developed over at [GitHub](http://github.com/aubreypwd/wp-noteup).
+NoteUp is developed with sparkle-dust on [Github](https://github.com/aubreypwd/wp-noteup)!
 
 == Credits ==
 
-Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2)
+Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
