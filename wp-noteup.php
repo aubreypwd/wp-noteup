@@ -1,13 +1,13 @@
 <?php
-
 /*
 Plugin Name: WP NoteUp
 Plugin URI: https://wordpress.org/plugins/wp-noteup/
-Description: WP NoteUp allows you to take simple notes when you're editing your Posts or Pages.
-Author: Aubrey Portwood
+Description: WP NoteUp allows you to take simple notes when you're editing your posts or pages.
 Version: 1.1.4
+Author: Aubrey Portwood
 Author URI: http://aubreypwd.com/
 Text Domain: wp-noteup
+Domain Path: /languages
 */
 
 // Make sure we aren't colliding with another function (rare?).

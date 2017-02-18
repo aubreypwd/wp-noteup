@@ -21,7 +21,16 @@ module.exports = function(grunt) {
 					svn_user:    'aubreypwd',
 
 					// Files with banners, icons, etc.
-					assets_dir:  'wp-org-assets'
+					assets_dir:  'wp-org-assets',
+
+					// Use this as the build directory.
+					build_dir: '.',
+
+					// Use this to deploy the SVN stuff.
+					tmp_dir: '/Users/aubreypwd/tmp/wp_deploy/',
+
+					// Why so high?
+					max_buffer : 1024 * 1024
 				}
 			}
 		}
