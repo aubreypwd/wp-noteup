@@ -59,16 +59,57 @@ class WP_NoteUp_CMB2 {
 	 * @since  1.1
 	 */
 	public function cmb2() {
-		$this->cmb2 = new_cmb2_box( apply_filters( 'wp_noteup_cmb2', array(
+
+		// The name of the metabox.
+		$name = esc_html__( 'Notes', 'wp-noteup' );
+
+		/**
+		 * Filter the CMB2 Metabox fields.
+		 *
+		 * @author Aubrey Portwood
+		 * @since  1.2
+		 *
+		 * @var array
+		 */
+		$cmb2_args = apply_filters( 'wp_noteup_cmb2', array(
 			'id'            => 'wp-noteup-cmb2',
-			'title'         => 'NoteUp',
-			'object_types'  => array( 'post', 'page' ), // Post.
+			'title'         => esc_html( $name ),
+			'object_types'  => $this->objects(),
 			'context'       => 'normal',
 			'show_names'    => false, // Show field names on the left.
-		) ) );
+		) );
 
-		$this->cmb2->add_field( apply_filters( 'wp_noteup_cmb2_field', array(
-			'name' => __( 'NoteUp', 'wp-noteup' ),
+		// Does this have the required keys?
+		$has_keys = array_key_exists( 'id', $cmb2_args )
+			&& array_key_exists( 'title', $cmb2_args )
+			&& array_key_exists( 'object_types', $cmb2_args );
+
+		if ( ! is_array( $cmb2_args ) || ! $has_keys ) {
+
+			// They filtered it and it won't work.
+			return;
+		}
+
+		// Create the CMB2 metabox.
+		$this->cmb2 = new_cmb2_box( $cmb2_args );
+
+		/**
+		 * Filter the CMB2 fields.
+		 *
+		 * @author Aubrey Portwood
+		 * @since  1.2
+		 *
+		 * @var array
+		 */
+		$cmb2_field_args = apply_filters( 'wp_noteup_cmb2_field', array(
+
+			/**
+			 * Filter the name of the metabox for Notes.
+			 *
+			 * @author Aubrey Portwood
+			 * @since  1.2
+			 */
+			'name' => $name,
 			'id'   => 'wp-noteup',
 			'type' => 'wysiwyg',
 			'options' => array(
@@ -87,6 +128,34 @@ class WP_NoteUp_CMB2 {
 				),
 				'quicktags' => false,
 			),
-		) ) );
+		) );
+
+		// Does this have the required keys?
+		$has_keys = array_key_exists( 'name', $cmb2_field_args ) &&
+			array_key_exists( 'id', $cmb2_field_args ) &&
+			array_key_exists( 'type', $cmb2_field_args ) &&
+			array_key_exists( 'options', $cmb2_field_args );
+
+		if ( ! is_array( $cmb2_field_args ) || ! $has_keys || 'wysiwyg' !== $cmb2_field_args['type'] ) {
+
+			// Bail here the filter broke something.
+			return;
+		}
+
+		$this->cmb2->add_field( $cmb2_field_args );
+	}
+
+	/**
+	 * What objects should the metabox go on?
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.2
+	 *
+	 * @return array An array of CPT's.
+	 */
+	public function objects() {
+
+		// Always on posts and pages.
+		return array( 'post', 'page' );
 	}
 }
