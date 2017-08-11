@@ -24,6 +24,12 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 
 == Changelog ==
 
+= 1.2 =
+
+* The metabox now says "Notes" instead of "WP NoteUp"
+* Allow Notes on other Post Types, just visit Settings > General
+* Added many new filters that make this more customizable
+
 = 1.1.4 =
 
 * Major fixes to work with WordPress 4.7.2!
