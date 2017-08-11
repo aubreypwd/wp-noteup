@@ -22,7 +22,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @var boolean
 	 */
-	public $cmb2_loaded = false;
+	private $cmb2_loaded = false;
 
 	/**
 	 * CMB2 instance.
@@ -32,7 +32,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @var    object CMB2_Boxes
 	 */
-	public $cmb2;
+	private $cmb2;
 
 	/**
 	 * Includes the plugin files.
@@ -155,7 +155,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @return array An array of CPT's.
 	 */
-	public function objects() {
+	private function objects() {
 
 		// Always on posts and pages.
 		return array( 'post', 'page' );
