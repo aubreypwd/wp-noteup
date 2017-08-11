@@ -21,8 +21,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @since  1.2
 	 */
 	function __construct() {
-		add_action( 'cmb2_admin_init', array( $this, 'cmb2' ) );
-		add_action( 'admin_init', array( $this, 'init_settings' ) );
+		add_action( 'admin_init', array( $this, 'wp_settings' ) );
 		add_action( 'admin_init', array( $this, 'save' ) );
 	}
 
@@ -32,9 +31,9 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @author Aubrey Portwood
 	 * @since  1.2
 	 */
-	public function init_settings() {
+	public function wp_settings() {
 		add_settings_section( 'wp_noteup_section', 'WP NoteUp', false, 'general' );
-		add_settings_field( 'wp_noteup_post_types', esc_html__( 'Other Post Types', 'wp-noteup' ), array( $this, 'post_type_settings_html' ), 'general', 'wp_noteup_section' );
+		add_settings_field( 'wp_noteup_post_types', esc_html__( 'Other Post Types', 'wp-noteup' ), array( $this, 'html' ), 'general', 'wp_noteup_section' );
 	}
 
 	/**
@@ -104,7 +103,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @author Aubrey Portwood
 	 * @since  1.2
 	 */
-	public function post_type_settings_html() {
+	public function html() {
 		?>
 		<ul>
 			<?php foreach ( $this->get_cpts() as $cpt ) : ?>
@@ -123,7 +122,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @param  string $option The option name.
 	 * @return array          The option ensured it's an array.
 	 */
-	private function get_sanitize_options_array( $option ) {
+	private function get_option( $option ) {
 		$option = get_option( $option, array() );
 
 		if ( ! is_array( $option ) ) {
@@ -157,7 +156,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @return boolean      True if the CPT is already there, false if not.
 	 */
 	private function checked( $cpt ) {
-		$option = $this->get_sanitize_options_array( 'wp_noteup_post_types' );
+		$option = $this->get_option( 'wp_noteup_post_types' );
 
 		if ( in_array( $cpt, $option ) || in_array( $cpt, array_keys( $option ) ) ) {
 			return true;
