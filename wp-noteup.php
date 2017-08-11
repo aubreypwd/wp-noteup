@@ -60,7 +60,7 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 *
-	 * @param  string $instance The name of the instance w/out WP_NoteUp_
+	 * @param string $instance The name of the instance w/out WP_NoteUp.
 	 *
 	 * @return object           The instance.
 	 */
