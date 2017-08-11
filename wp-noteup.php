@@ -3,7 +3,7 @@
  * Plugin Name: WP NoteUp
  * Plugin URI: https://wordpress.org/plugins/wp-noteup/
  * Description: WP NoteUp allows you to take simple notes when you're editing your posts or pages.
- * Version: 1.1.4
+ * Version: 1.2
  * Author: Aubrey Portwood
  * Author URI: http://aubreypwd.com/
  * Text Domain: wp-noteup
@@ -62,7 +62,7 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 *
 	 * @param string $instance The name of the instance w/out WP_NoteUp.
 	 *
-	 * @return object           The instance.
+	 * @return object          The instance.
 	 */
 	function wp_noteup( $instance ) {
 		global $wp_noteup_instances;
