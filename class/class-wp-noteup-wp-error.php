@@ -1,4 +1,10 @@
 <?php
+/**
+ * Errors.
+ *
+ * @package aubreypwd\WP_Noteup
+ * @since  1.1
+ */
 
 /**
  * Place to keep all the error messages.

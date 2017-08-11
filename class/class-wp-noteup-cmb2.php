@@ -1,4 +1,10 @@
 <?php
+/**
+ * Noteup CMB2 Setup.
+ *
+ * @package aubreypwd\WP_Noteup
+ * @since  1.1
+ */
 
 /**
  * Noteup CMB2 Setup.
@@ -16,7 +22,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @var boolean
 	 */
-	public $cmb2_loaded = false;
+	private $cmb2_loaded = false;
 
 	/**
 	 * CMB2 instance.
@@ -26,7 +32,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @var    object CMB2_Boxes
 	 */
-	public $cmb2;
+	private $cmb2;
 
 	/**
 	 * Includes the plugin files.
@@ -35,7 +41,6 @@ class WP_NoteUp_CMB2 {
 	 * @since  1.1
 	 */
 	public function include_cmb2() {
-
 		if ( ! class_exists( 'CMB2' ) ) {
 			if ( require_once( dirname( __FILE__ ) . '/../cmb2/init.php' ) ) {
 				$this->cmb2_loaded = true;
@@ -52,57 +57,107 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1
+	 *
+	 * @return void Early bail if filters break the metaboxes we want to add.
 	 */
 	public function cmb2() {
 
-		$this->cmb2 = new_cmb2_box( apply_filters( 'wp_noteup_cmb2', array(
-			'id'            => 'wp-noteup-cmb2',
-			'title'         => 'NoteUp',
-			'object_types'  => array( 'post', 'page' ), // Post
-			'context'       => 'normal',
-			// 'priority'      => 'high',
-			'show_names'    => false, // Show field names on the left
-			// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
-			// 'cmb_styles' => false, // false to disable the CMB stylesheet
-			// 'closed'     => true, // true to keep the metabox closed by default
-		) ) );
+		// The name of the metabox.
+		$name = esc_html__( 'Notes', 'wp-noteup' );
 
-		$this->cmb2->add_field( apply_filters( 'wp_noteup_cmb2_field', array(
-			'name'    => __( 'NoteUp', 'wp-noteup' ),
-			'id'      => 'wp-noteup',
-			'type'    => 'wysiwyg',
+		/**
+		 * Filter the CMB2 Metabox fields.
+		 *
+		 * @author Aubrey Portwood
+		 * @since  1.2
+		 *
+		 * @var array
+		 */
+		$cmb2_args = apply_filters( 'wp_noteup_cmb2', array(
+			'id'            => 'wp-noteup-cmb2',
+			'title'         => esc_html( $name ),
+			'object_types'  => $this->objects(),
+			'context'       => 'normal',
+			'show_names'    => false, // Show field names on the left.
+		) );
+
+		// Does this have the required keys?
+		$has_keys = array_key_exists( 'id', $cmb2_args )
+			&& array_key_exists( 'title', $cmb2_args )
+			&& array_key_exists( 'object_types', $cmb2_args );
+
+		if ( ! is_array( $cmb2_args ) || ! $has_keys ) {
+
+			// They filtered it and it won't work.
+			return;
+		}
+
+		// Create the CMB2 metabox.
+		$this->cmb2 = new_cmb2_box( $cmb2_args );
+
+		/**
+		 * Filter the CMB2 fields.
+		 *
+		 * @author Aubrey Portwood
+		 * @since  1.2
+		 *
+		 * @var array
+		 */
+		$cmb2_field_args = apply_filters( 'wp_noteup_cmb2_field', array(
+
+			/**
+			 * Filter the name of the metabox for Notes.
+			 *
+			 * @author Aubrey Portwood
+			 * @since  1.2
+			 */
+			'name' => $name,
+			'id'   => 'wp-noteup',
+			'type' => 'wysiwyg',
 			'options' => array(
-				'wpautop' => true, // use wpautop?
-				'media_buttons' => true, // show insert/upload button(s)
+				'wpautop'       => true,
+				'media_buttons' => true,
 				'textarea_rows' => 8,
-				// 'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
-				// 'editor_class' => 'wp-noteup-tiny-mce', // add extra class(es) to the editor textarea
-				'teeny' => true, // output the minimal editor config used in Press This
-				'dfw' => true, // replace the default fullscreen with DFW (needs specific css)
+				'teeny'         => true,
+				'dfw'           => true,
 				'tinymce' => array(
-					// 'remove_linebreaks'            => false,
-					// 'gecko_spellcheck'             => false,
-					// 'keep_styles'                  => true,
-					// 'accessibility_focus'          => true,
-					// 'tabfocus_elements'            => 'major-publishing-actions',
-					// 'media_strict'                 => false,
 					'paste_remove_styles'          => true,
 					'paste_remove_spans'           => true,
 					'paste_strip_class_attributes' => true,
-					// 'paste_text_use_dialog'        => true,
 					'wpeditimage_disable_captions' => true,
-					// 'plugins'                      => 'tabfocus,paste,media,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,wpfullscreen',
 					'content_css'                  => false,
-					// 'wpautop'                      => true,
-					// 'apply_source_formatting'      => false,
-					// 'block_formats'                => "Paragraph = p; Heading 3 = h3; Heading 4 = h4",
 					'toolbar1'                     => 'bold,italic,bullist,link,unlink',
-					// 'toolbar2'                     => 'formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help ',
-					// 'toolbar3'                     => '',
-					// 'toolbar4'                     => '',
-				), // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-				'quicktags' => false, // load Quicktags, can be used to pass settings directly to Quicktags using an array()
+				),
+				'quicktags' => false,
 			),
-		) ) );
+		) );
+
+		// Does this have the required keys?
+		$has_keys = array_key_exists( 'name', $cmb2_field_args ) &&
+			array_key_exists( 'id', $cmb2_field_args ) &&
+			array_key_exists( 'type', $cmb2_field_args ) &&
+			array_key_exists( 'options', $cmb2_field_args );
+
+		if ( ! is_array( $cmb2_field_args ) || ! $has_keys || 'wysiwyg' !== $cmb2_field_args['type'] ) {
+
+			// Bail here the filter broke something.
+			return;
+		}
+
+		$this->cmb2->add_field( $cmb2_field_args );
+	}
+
+	/**
+	 * What objects should the metabox go on?
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.2
+	 *
+	 * @return array An array of CPT's.
+	 */
+	private function objects() {
+
+		// Always on posts and pages.
+		return array( 'post', 'page' );
 	}
 }

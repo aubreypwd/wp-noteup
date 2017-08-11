@@ -1,14 +1,15 @@
 <?php
-/*
-Plugin Name: WP NoteUp
-Plugin URI: https://wordpress.org/plugins/wp-noteup/
-Description: WP NoteUp allows you to take simple notes when you're editing your posts or pages.
-Version: 1.1.4
-Author: Aubrey Portwood
-Author URI: http://aubreypwd.com/
-Text Domain: wp-noteup
-Domain Path: /languages
-*/
+/**
+ * Plugin Name: WP NoteUp
+ * Plugin URI: https://wordpress.org/plugins/wp-noteup/
+ * Description: WP NoteUp allows you to take simple notes when you're editing your posts or pages.
+ * Version: 1.2
+ * Author: Aubrey Portwood
+ * Author URI: http://aubreypwd.com/
+ * Text Domain: wp-noteup
+ *
+ * @package aubreypwd\WP_Noteup
+ */
 
 // Make sure we aren't colliding with another function (rare?).
 if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) && ! isset( $wp_noteup_instances ) ) {
@@ -58,9 +59,9 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 *
-	 * @param  string $instance The name of the instance w/out WP_NoteUp_
+	 * @param string $instance The name of the instance w/out WP_NoteUp.
 	 *
-	 * @return object           The instance.
+	 * @return object          The instance.
 	 */
 	function wp_noteup( $instance ) {
 		global $wp_noteup_instances;
@@ -76,6 +77,6 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 } else {
 
 	// The function exists, not sure why!
-	wp_die( __( 'Sorry but we can\'t activate WP NoteUp because it appears to be colliding with another theme or plugin.', 'wp-noteup' ) );
+	wp_die( esc_html__( "Sorry but we can't activate WP NoteUp because it appears to be colliding with another theme or plugin.", 'wp-noteup' ) );
 
 } // End if().
