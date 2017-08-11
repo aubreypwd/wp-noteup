@@ -7,7 +7,6 @@
  * Author: Aubrey Portwood
  * Author URI: http://aubreypwd.com/
  * Text Domain: wp-noteup
- * Domain Path: /languages
  *
  * @package aubreypwd\WP_Noteup
  */
