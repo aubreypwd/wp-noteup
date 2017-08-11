@@ -1,4 +1,10 @@
 <?php
+/**
+ * Core.
+ *
+ * @package aubreypwd\WP_Noteup
+ * @since  1.1
+ */
 
 /**
  * WP Noteup Core class.

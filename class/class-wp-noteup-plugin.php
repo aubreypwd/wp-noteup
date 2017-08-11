@@ -1,4 +1,10 @@
 <?php
+/**
+ * Base.
+ *
+ * @package aubreypwd\WP_Noteup
+ * @since  1.1
+ */
 
 /**
  * Base plugin class.
@@ -61,7 +67,7 @@ class WP_NoteUp_Plugin {
 		// Set the name and version based on headers.
 		$this->version = $this->get_plugin_info( 'Version' );
 
-		// Hooks
+		// Hooks.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 	}
@@ -119,8 +125,8 @@ class WP_NoteUp_Plugin {
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 *
-	 * @param  string  $key The key in $_REQUEST[$key].
-	 * @param  array $filter The filter to run in the format of array( $instance, 'callback' ).
+	 * @param string $key    The key in $_REQUEST[$key].
+	 * @param array  $filter The filter to run in the format of array( $instance, 'callback' ).
 	 *
 	 * @return mixed|false The value after all the filters are run, or false if it doesn't exist in $_REQUEST.
 	 */
@@ -143,7 +149,6 @@ class WP_NoteUp_Plugin {
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 *
-	 * @param string $context The context for what the meta value is.
 	 * @param mixed $post Any data needed to be passed, usually $post.
 	 *
 	 * @return string The value of the noteup.
