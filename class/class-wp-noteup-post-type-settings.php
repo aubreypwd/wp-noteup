@@ -79,6 +79,15 @@ class WP_NoteUp_Post_Type_Settings {
 		update_option( 'wp_noteup_post_types', array_keys( $sent_post_types ) );
 	}
 
+	/**
+	 * Sanitize the sent data.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.2
+	 *
+	 * @param  mixed $sent_post_types  The potential data.
+	 * @return array                   An array of post types.
+	 */
 	private function sanitize( $sent_post_types ) {
 		if ( ! is_array( $sent_post_types ) ) {
 			return array();
