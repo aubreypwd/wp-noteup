@@ -12,13 +12,11 @@ Take notes on your posts and pages.
 
 == Description ==
 
-WP NoteUp allows you to take simple notes when you're editing your posts
-or pages.
+WP NoteUp allows you to take simple notes when you're editing your posts or pages.
 
 == Installation ==
 
-Install by going to your WordPress Dashboard > Plugins > Add New and searching
-for "WP NoteUp."
+Install by going to your WordPress Dashboard > Plugins > Add New and searching for "WP NoteUp."
 
 == Screenshots ==
 
@@ -28,38 +26,29 @@ for "WP NoteUp."
 
 = 1.1.4 =
 
-Major fixes to work with WordPress 4.7.2!
-
-Notes were lost when the postbox was moved around from the side to the
-"normal" area and back in the Post edit screen.
-
-So, for now, we've disabled the NoteUp metabox from being in side,
-and do not allow it to be dragged around to different areas.
-Don't worry, we don't break any of your other post-boxes!
+* Major fixes to work with WordPress 4.7.2!
+* Notes were lost when the postbox was moved around from the side to the "normal" area and back in the Post edit screen.
+* So, for now, we've disabled the NoteUp metabox from being in side, and do not allow it to be dragged around to different areas. Don't worry, we don't break any of your other post-boxes!
 
 = 1.1.3 =
 
-Yet another small change in hopes that activation through WordPress.org
-is again possible.
+* Yet another small change in hopes that activation through WordPress.org is again possible.
 
 = 1.1.2 =
 
-Another small tweak fixing the issue people are having activating the plugin.
+* Another small tweak fixing the issue people are having activating the plugin.
 
 = 1.1.1 =
 
-Small tweak that keeps other Add Media buttons from showing up in the NoteUp
-box.
+* Small tweak that keeps other Add Media buttons from showing up in the NoteUp box.
 
 = 1.1 =
 
-This major update, dubbed Cube, was entirely focused on updating the experience
-of note taking to include formatting and media. Special thanks to the
-[CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com).
+* This major update, dubbed Cube, was entirely focused on updating the experience of note taking to include formatting and media. Special thanks to the [CMB2](https://github.com/WebDevStudios/CMB2) crew [@webdevstudios](http://webdevstudios.com).
 
 = 1.0 =
 
-Initial release that allows simple text notes on Posts and Pages.
+* Initial release that allows simple text notes on Posts and Pages.
 
 == Development & Bugs ==
 
@@ -68,3 +57,7 @@ NoteUp is developed with sparkle-dust on [Github](https://github.com/aubreypwd/w
 == Credits ==
 
 Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
+
+== Upgrade Notice ==
+
+Fun bells and whistles.
