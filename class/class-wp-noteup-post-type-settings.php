@@ -122,7 +122,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @param  string $option The option name.
 	 * @return array          The option ensured it's an array.
 	 */
-	private function get_option( $option ) {
+	public function get_option( $option ) {
 		$option = get_option( $option, array() );
 
 		if ( ! is_array( $option ) ) {
