@@ -57,6 +57,8 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1
+	 *
+	 * @return void Early bail if filters break the metaboxes we want to add.
 	 */
 	public function cmb2() {
 
