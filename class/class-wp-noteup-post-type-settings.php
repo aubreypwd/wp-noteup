@@ -62,39 +62,38 @@ class WP_NoteUp_Post_Type_Settings {
 				return;
 		}
 
-		// Get the post types that were sent.
-		$sent_post_types = array_map( array( $this, 'sanitize_string' ), $_POST['wp_noteup_post_types'] );
+		$sent_post_types = array_map( array( $this, 'sanitize' ), $_POST['wp_noteup_post_types'] );
 
 		// Get the existing post types.
 		$registered_post_types = $this->get_cpts();
 
-		foreach ( $sent_post_types as $key => $val ) {
-			if ( ! post_type_exists( $key ) ) {
+		foreach ( $sent_post_types as $cpt => $val ) {
+			if ( ! post_type_exists( $cpt ) ) {
 
 				// This CPT doesn't exist, remove it!
-				unset( $sent_post_types[ $key ] );
+				unset( $sent_post_types[ $cpt ] );
 			}
 		}
 
 		// Save to the database.
-		update_option( 'wp_noteup_post_types', $sent_post_types );
+		update_option( 'wp_noteup_post_types', array_keys( $sent_post_types ) );
 	}
 
-	/**
-	 * Sanitize a value to a string.
-	 *
-	 * @author Aubrey Portwood
-	 * @since  1.2
-	 *
-	 * @param  mixed $value  Potential value.
-	 * @return string        The value converted to a string.
-	 */
-	private function sanitize_string( $value ) {
-		if ( ! is_string( $value ) ) {
-			return '';
+	private function sanitize( $sent_post_types ) {
+		if ( ! is_array( $sent_post_types ) ) {
+			return array();
 		}
 
-		return $value;
+		$sanitized = array();
+		foreach ( $sent_post_types as $cpt => $value ) {
+			if ( ! is_string( $cpt ) ) {
+				continue;
+			}
+
+			$sanitized[ $cpt ] = true;
+		}
+
+		return $sanitized;
 	}
 
 	/**
@@ -102,8 +101,21 @@ class WP_NoteUp_Post_Type_Settings {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.2
+	 *
+	 * @return void Early bail if there are no other CPT's.
 	 */
 	public function html() {
+
+		// No CPT's to choose from.
+		if ( empty( $this->get_cpts() ) ) {
+			?>
+			<p class="description"><?php esc_html_e( 'No other post types. This is already enabled on posts and pages by default.', 'wp-noteup' ); ?></p>
+			<?php
+
+			// Bail.
+			return;
+		}
+
 		?>
 		<ul>
 			<?php foreach ( $this->get_cpts() as $cpt ) : ?>
@@ -120,11 +132,10 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @author Aubrey Portwood
 	 * @since  1.2
 	 *
-	 * @param  string $option The option name.
 	 * @return array          The option ensured it's an array.
 	 */
-	public function get_option( $option ) {
-		$option = get_option( $option, array() );
+	public function get_option() {
+		$option = get_option( 'wp_noteup_post_types', array() );
 
 		if ( ! is_array( $option ) ) {
 			$option = array();
@@ -157,9 +168,9 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @return boolean      True if the CPT is already there, false if not.
 	 */
 	private function checked( $cpt ) {
-		$option = $this->get_option( 'wp_noteup_post_types' );
+		$option = $this->get_option();
 
-		if ( in_array( $cpt, $option ) || in_array( $cpt, array_keys( $option ) ) ) {
+		if ( in_array( $cpt, $option ) || in_array( $cpt, $option ) ) {
 			return true;
 		}
 
@@ -201,7 +212,7 @@ class WP_NoteUp_Post_Type_Settings {
 			'nav_menu_item',
 			'custom_css',
 			'customize_changeset',
-			// 'attachment',
+			'attachment',
 
 			// Always on post and pages.
 			'post',

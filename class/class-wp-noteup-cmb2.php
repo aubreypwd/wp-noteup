@@ -62,7 +62,7 @@ class WP_NoteUp_CMB2 {
 		$this->cmb2 = new_cmb2_box( apply_filters( 'wp_noteup_cmb2', array(
 			'id'            => 'wp-noteup-cmb2',
 			'title'         => 'NoteUp',
-			'object_types'  => array( 'post', 'page' ), // Post.
+			'object_types'  => $this->object_types(), // Post.
 			'context'       => 'normal',
 			'show_names'    => false, // Show field names on the left.
 		) ) );
@@ -88,5 +88,24 @@ class WP_NoteUp_CMB2 {
 				'quicktags' => false,
 			),
 		) ) );
+	}
+
+	/**
+	 * The object types (post types) to include WP NoteUp on.
+	 *
+	 * @author Aubrey Portwood
+	 * @since  1.2
+	 *
+	 * @return array The post types.
+	 */
+	private function object_types() {
+		$defaults = array( 'post', 'page' );
+		$user_cpts = wp_noteup( 'Post_Type_Settings' )->get_option();
+
+		if ( ! is_array( $user_cpts ) ) {
+			$user_cpts = $defaults;
+		}
+
+		return array_merge( $defaults, $user_cpts );
 	}
 }
