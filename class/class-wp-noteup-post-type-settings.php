@@ -3,14 +3,14 @@
  * Post Type Settings.
  *
  * @package aubreypwd\WP_Noteup
- * @since  1.1
+ * @since  1.2.0
  */
 
 /**
  * Post Type Settings.
  *
  * @author Aubrey Portwood
- * @since  1.0
+ * @since  1.2.0
  */
 class WP_NoteUp_Post_Type_Settings {
 
@@ -18,7 +18,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Hooks.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 */
 	function __construct() {
 		add_action( 'admin_init', array( $this, 'wp_settings' ) );
@@ -29,7 +29,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Admin Initialization.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 */
 	public function wp_settings() {
 		add_settings_section( 'wp_noteup_section', 'WP NoteUp', false, 'general' );
@@ -40,7 +40,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Save the Post Types.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @return void Early bail if it's not time to.
 	 */
@@ -83,7 +83,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Sanitize the sent data.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @param  mixed $sent_post_types  The potential data.
 	 * @return array                   An array of post types.
@@ -109,7 +109,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * The post type settings.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @return void Early bail if there are no other CPT's.
 	 */
@@ -139,7 +139,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Get a WP option that should be an array.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @return array          The option ensured it's an array.
 	 */
@@ -157,7 +157,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Echo out 'checked' if the CPT is already in the options.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @param  string  $cpt The CPT name.
 	 */
@@ -171,7 +171,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Is an option already checked (saved in the DB)?
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @param  string $cpt  The CPT name.
 	 * @return boolean      True if the CPT is already there, false if not.
@@ -190,7 +190,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Get the label/name of a CPT.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @param  string $cpt The Post Type name.
 	 * @return string      The label.
@@ -209,7 +209,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * Get CPT's we can hook WP NoteUp to.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
 	 * @return array Post types we can add metaboxes to.
 	 */
