@@ -69,5 +69,4 @@ Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
 
 == Upgrade Notice ==
 
-This update will allow you to add notes to other post types! Just update and
-visit Settings > General to enable on other post types.
+This update fixes some compatibility issues with PHP versions lower than 5.5. If v1.2 is working for you, you don't need to upgrade now.
