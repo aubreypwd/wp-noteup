@@ -45,10 +45,13 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @return void Early bail if it's not time to.
 	 */
 	public function save() {
+
+		// @codingStandardsIgnoreLine: Direct access to $_POST okay.
 		if ( ! isset( $_POST['option_page'] ) ) {
 			return;
 		}
 
+		// @codingStandardsIgnoreLine: Direct access to $_POST okay.
 		if ( ! isset( $_POST['action'] ) || 'update' !== $_POST['action'] ) {
 			return;
 		}
@@ -57,11 +60,13 @@ class WP_NoteUp_Post_Type_Settings {
 			return;
 		}
 
+		// @codingStandardsIgnoreLine: Direct access to $_POST okay.
 		if ( ! isset( $_POST['wp_noteup_post_types'] ) || ! is_array( $_POST['wp_noteup_post_types'] ) ) {
 			delete_option( 'wp_noteup_post_types' );
 				return;
 		}
 
+		// @codingStandardsIgnoreLine: Direct access to $_POST okay.
 		$sent_post_types = array_map( array( $this, 'sanitize' ), $_POST['wp_noteup_post_types'] );
 
 		// Get the existing post types.
