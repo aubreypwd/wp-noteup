@@ -8,7 +8,7 @@
  * Author URI: http://aubreypwd.com/
  * Text Domain: wp-noteup
  *
- * @package aubreypwd\WP_Noteup
+ * @package aubreypwd\WPNoteup
  */
 
 // Make sure we aren't colliding with another function (rare?).

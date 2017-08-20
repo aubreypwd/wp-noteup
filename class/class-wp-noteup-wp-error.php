@@ -2,7 +2,7 @@
 /**
  * Errors.
  *
- * @package aubreypwd\WP_Noteup
+ * @package aubreypwd\WPNoteup
  * @since  1.1.0
  */
 

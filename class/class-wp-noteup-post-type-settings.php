@@ -2,7 +2,7 @@
 /**
  * Post Type Settings.
  *
- * @package aubreypwd\WP_Noteup
+ * @package aubreypwd\WPNoteup
  * @since  1.2.0
  */
 
