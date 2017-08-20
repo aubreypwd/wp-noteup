@@ -2,15 +2,15 @@
 /**
  * Noteup CMB2 Setup.
  *
- * @package aubreypwd\WP_Noteup
- * @since  1.1
+ * @package aubreypwd\WPNoteup
+ * @since  1.1.0
  */
 
 /**
  * Noteup CMB2 Setup.
  *
  * @author Aubrey Portwood
- * @since  1.1
+ * @since  1.1.0
  */
 class WP_NoteUp_CMB2 {
 
@@ -18,7 +18,7 @@ class WP_NoteUp_CMB2 {
 	 * Is CMB2 already loaded?
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.1
+	 * @since  1.1.0
 	 *
 	 * @var boolean
 	 */
@@ -28,7 +28,7 @@ class WP_NoteUp_CMB2 {
 	 * CMB2 instance.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.1
+	 * @since  1.1.0
 	 *
 	 * @var    object CMB2_Boxes
 	 */
@@ -38,7 +38,9 @@ class WP_NoteUp_CMB2 {
 	 * Includes the plugin files.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.1
+	 * @since  1.1.0
+	 *
+	 * @return boolean If CMB2 was loaded or not.
 	 */
 	public function include_cmb2() {
 		if ( ! class_exists( 'CMB2' ) ) {
@@ -56,7 +58,7 @@ class WP_NoteUp_CMB2 {
 	 * Setup the CMB2 box.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.1
+	 * @since  1.1.0
 	 *
 	 * @return void Early bail if filters break the metaboxes we want to add.
 	 */
@@ -69,14 +71,14 @@ class WP_NoteUp_CMB2 {
 		 * Filter the CMB2 Metabox fields.
 		 *
 		 * @author Aubrey Portwood
-		 * @since  1.2
+		 * @since  1.2.0
 		 *
 		 * @var array
 		 */
 		$cmb2_args = apply_filters( 'wp_noteup_cmb2', array(
 			'id'            => 'wp-noteup-cmb2',
 			'title'         => esc_html( $name ),
-			'object_types'  => $this->objects(),
+			'object_types'  => $this->object_types(),
 			'context'       => 'normal',
 			'show_names'    => false, // Show field names on the left.
 		) );
@@ -99,7 +101,7 @@ class WP_NoteUp_CMB2 {
 		 * Filter the CMB2 fields.
 		 *
 		 * @author Aubrey Portwood
-		 * @since  1.2
+		 * @since  1.2.0
 		 *
 		 * @var array
 		 */
@@ -109,7 +111,7 @@ class WP_NoteUp_CMB2 {
 			 * Filter the name of the metabox for Notes.
 			 *
 			 * @author Aubrey Portwood
-			 * @since  1.2
+			 * @since  1.2.0
 			 */
 			'name' => $name,
 			'id'   => 'wp-noteup',
@@ -148,16 +150,21 @@ class WP_NoteUp_CMB2 {
 	}
 
 	/**
-	 * What objects should the metabox go on?
+	 * The object types (post types) to include WP NoteUp on.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.2
+	 * @since  1.2.0
 	 *
-	 * @return array An array of CPT's.
+	 * @return array The post types.
 	 */
-	private function objects() {
+	private function object_types() {
+		$defaults = array( 'post', 'page' );
+		$user_cpts = wp_noteup( 'Post_Type_Settings' )->get_option();
 
-		// Always on posts and pages.
-		return array( 'post', 'page' );
+		if ( ! is_array( $user_cpts ) ) {
+			$user_cpts = $defaults;
+		}
+
+		return array_merge( $defaults, $user_cpts );
 	}
 }

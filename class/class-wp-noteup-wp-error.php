@@ -2,15 +2,15 @@
 /**
  * Errors.
  *
- * @package aubreypwd\WP_Noteup
- * @since  1.1
+ * @package aubreypwd\WPNoteup
+ * @since  1.1.0
  */
 
 /**
  * Place to keep all the error messages.
  *
  * @author Aubrey Portwood
- * @since  Unknown
+ * @since  1.1.0
  */
 class WP_NoteUp_WP_Error {
 
@@ -18,7 +18,7 @@ class WP_NoteUp_WP_Error {
 	 * The errors.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  Unknown
+	 * @since  1.1.0
 	 *
 	 * @var object WP_Error object.
 	 */
@@ -28,7 +28,7 @@ class WP_NoteUp_WP_Error {
 	 * Construct.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  Unknown
+	 * @since  1.1.0
 	 */
 	function __construct() {
 		$this->errors = array(
@@ -40,11 +40,11 @@ class WP_NoteUp_WP_Error {
 	 * Gets the error message by slug so we present the right error code.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  Unknown
+	 * @since  1.1.0
 	 *
 	 * @param  string $error_slug   The slug of the error.
 	 *
-	 * @return WP_Error             The WP_Error for that slug.
+	 * @return WP_Error The WP_Error for that slug.
 	 */
 	function get_error( $error_slug ) {
 		return $this->errors[ $error_slug ];

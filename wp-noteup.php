@@ -8,7 +8,7 @@
  * Author URI: http://aubreypwd.com/
  * Text Domain: wp-noteup
  *
- * @package aubreypwd\WP_Noteup
+ * @package aubreypwd\WPNoteup
  */
 
 // Make sure we aren't colliding with another function (rare?).
@@ -32,8 +32,6 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
-	 *
-	 * @return void
 	 */
 	function wp_noteup_init() {
 
@@ -45,12 +43,14 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		require_once( 'class/class-wp-noteup-cmb2.php' );
 		require_once( 'class/class-wp-noteup-wp-error.php' );
 		require_once( 'class/class-wp-noteup-core.php' );
+		require_once( 'class/class-wp-noteup-post-type-settings.php' );
 
 		// Instances.
-		$wp_noteup_instances['WP_NoteUp_Plugin']     = new WP_NoteUp_Plugin();
-		$wp_noteup_instances['WP_NoteUp_CMB2']       = new WP_NoteUp_CMB2();
-		$wp_noteup_instances['WP_NoteUp_WP_Error']   = new WP_NoteUp_WP_Error();
-		$wp_noteup_instances['WP_NoteUp_Core']       = new WP_NoteUp_Core();
+		$wp_noteup_instances['WP_NoteUp_Plugin']             = new WP_NoteUp_Plugin();
+		$wp_noteup_instances['WP_NoteUp_CMB2']               = new WP_NoteUp_CMB2();
+		$wp_noteup_instances['WP_NoteUp_WP_Error']           = new WP_NoteUp_WP_Error();
+		$wp_noteup_instances['WP_NoteUp_Core']               = new WP_NoteUp_Core();
+		$wp_noteup_instances['WP_NoteUp_Post_Type_Settings'] = new WP_NoteUp_Post_Type_Settings();
 	}
 
 	/**
@@ -61,7 +61,7 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 *
 	 * @param string $instance The name of the instance w/out WP_NoteUp.
 	 *
-	 * @return object          The instance.
+	 * @return object The instance.
 	 */
 	function wp_noteup( $instance ) {
 		global $wp_noteup_instances;

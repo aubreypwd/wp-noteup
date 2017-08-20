@@ -1,3 +1,10 @@
+/**
+ * Disabled metabox from being sortable.
+ *
+ * @package aubreypwd\WPNoteup
+ * @since  1.1.4
+ */
+
 /* globals jQuery */
 
 if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
@@ -69,5 +76,5 @@ if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
 
 		// Send back our public object.
 		return pub;
-	} )( jQuery, {} );
+	} ( jQuery, {} ) );
 }
