@@ -32,8 +32,6 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
-	 *
-	 * @return void
 	 */
 	function wp_noteup_init() {
 
@@ -63,7 +61,7 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 *
 	 * @param string $instance The name of the instance w/out WP_NoteUp.
 	 *
-	 * @return object          The instance.
+	 * @return object The instance.
 	 */
 	function wp_noteup( $instance ) {
 		global $wp_noteup_instances;
