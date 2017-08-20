@@ -26,9 +26,9 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 
 = 1.2 =
 
-* The metabox now says "Notes" instead of "WP NoteUp"
-* Allow Notes on other Post Types, just visit Settings > General
-* Added many new filters that make this more customizable
+The update adds the ability to use WP NoteUp on other custom post types! Also, we've
+simplified the Metabox, it now says "Notes" instead of "NoteUp." And, I've made it
+safer by validating and filters used under the hood by other developers.
 
 = 1.1.4 =
 
