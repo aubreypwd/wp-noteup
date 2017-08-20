@@ -184,7 +184,7 @@ class WP_NoteUp_Post_Type_Settings {
 	private function checked( $cpt ) {
 		$option = $this->get_option();
 
-		if ( in_array( $cpt, $option ) || in_array( $cpt, $option ) ) {
+		if ( in_array( $cpt, $option, true ) || in_array( $cpt, $option, true ) ) {
 			return true;
 		}
 
