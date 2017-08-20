@@ -24,6 +24,11 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 
 == Changelog ==
 
+= 1.2.1 =
+
+Quick update to fix problems when using < PHP 5.5 that was causing "Fatal error: Can't use method return value in write context in ...wp-noteup/class/class-wp-noteup-post-type-settings.php"
+Tested down to PHP 5.2.4
+
 = 1.2 =
 
 The update adds the ability to use WP NoteUp on other custom post types! Just checkout Settings > General to enable other post types. Also, we've simplified the Metabox, it now says "Notes" instead of "NoteUp." And, I've made it safer by validating and filters used under the hood by other developers.
