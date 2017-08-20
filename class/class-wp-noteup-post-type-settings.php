@@ -131,7 +131,7 @@ class WP_NoteUp_Post_Type_Settings {
 				<li><input type="checkbox" name="wp_noteup_post_types[<?php echo esc_attr( $cpt ); ?>]"<?php $this->is_checked( $cpt ); ?> /> <?php echo esc_html( $this->get_cpt_name( $cpt ) ); ?></li>
 			<?php endforeach; ?>
 		</ul>
-		<p class="description"><?php esc_html_e( 'Enables NoteUp on other post types.', 'wp-noteup' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Enables notes on other post types.', 'wp-noteup' ); ?></p>
 		<?php
 	}
 
