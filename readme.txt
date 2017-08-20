@@ -8,11 +8,11 @@ Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Take notes on your posts and pages.
+Take notes on your posts, pages, and other custom post types.
 
 == Description ==
 
-WP NoteUp allows you to take simple notes when you're editing your posts or pages.
+WP NoteUp allows you to take simple notes when you're editing your posts, pages, or other custom post types.
 
 == Installation ==
 
@@ -26,17 +26,11 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 
 = 1.2 =
 
-* The metabox now says "Notes" instead of "WP NoteUp"
-* Allow Notes on other Post Types, just visit Settings > General
-* Added many new filters that make this more customizable
+The update adds the ability to use WP NoteUp on other custom post types! Just checkout Settings > General to enable other post types. Also, we've simplified the Metabox, it now says "Notes" instead of "NoteUp." And, I've made it safer by validating and filters used under the hood by other developers.
 
 = 1.1.4 =
 
-Major fixes to work with WordPress 4.7.2!
-
-Notes were lost when the postbox was moved around from the side to the "normal" area and back in the Post edit screen.
-
-So, for now, we've disabled the NoteUp metabox from being in side, and do not allow it to be dragged around to different areas. Don't worry, we don't break any of your other post-boxes!
+Major fixes to work with WordPress 4.7.2! Notes were lost when the postbox was moved around from the side to the "normal" area and back in the Post edit screen. So, for now, we've disabled the NoteUp metabox from being in side, and do not allow it to be dragged around to different areas. Don't worry, we don't break any of your other post-boxes!
 
 = 1.1.3 =
 
@@ -70,4 +64,5 @@ Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
 
 == Upgrade Notice ==
 
-Fun bells and whistles.
+This update will allow you to add notes to other post types! Just update and
+visit Settings > General to enable on other post types.
