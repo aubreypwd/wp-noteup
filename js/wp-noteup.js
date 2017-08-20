@@ -1,6 +1,13 @@
+/**
+ * Main JS.
+ *
+ * @package aubreypwd\WPNoteup
+ * @since  1.1.4
+ */
+
 /* globals jQuery */
 
-if ( ! window.hasOwnProperty( 'WPNoteUp' ) ) {
+if ( ! window.hasOwnProperty( 'aubreyPwdWPNoteUp' ) && 1 === 2 ) { // Yeah, it's disabled, read below if you must.
 
 	/*
 	 * Shared Functionality Module.
@@ -8,21 +15,17 @@ if ( ! window.hasOwnProperty( 'WPNoteUp' ) ) {
 	 * @author Aubrey Portwood
 	 * @since  1.1.4
 	 */
-	window.WPNoteUp = ( function( $, pub ) {
+	window.aubreyPwdWPNoteUp = ( function( $, pub ) {
 
 		/**
-		 * Modules.
+		 * Nothing here yet.
 		 *
-		 * @author Aubrey Portwood
-		 * @since  1.1.4
-		 *
-		 * When individual modules are loaded, their public functions are stacked here.
-		 *
-		 * @type {Array}
+		 * There used to be something here, but then we didn't need
+		 * it anymore. So, what we did, was just left this here just
+		 * in case we need it again.
 		 */
-		pub.modules = [];
 
 		// Send back our public object.
 		return pub;
-	} )( jQuery, {} );
+	} ( jQuery, {} ) );
 }

@@ -1,10 +1,16 @@
 <?php
+/**
+ * Core.
+ *
+ * @package aubreypwd\WPNoteup
+ * @since  1.1.0
+ */
 
 /**
  * WP Noteup Core class.
  *
  * @author Aubrey Portwood
- * @since  1.0
+ * @since  1.0.0
  */
 class WP_NoteUp_Core {
 
@@ -12,7 +18,7 @@ class WP_NoteUp_Core {
 	 * Construct.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	function __construct() {
 
@@ -24,7 +30,7 @@ class WP_NoteUp_Core {
 	 * Load CMB2.
 	 *
 	 * @author Aubrey Portwood
-	 * @since  1.1
+	 * @since  1.1.0
 	 *
 	 * @return object|boolean True if we loaded CMB2, WP_Error object if we get an error.
 	 */

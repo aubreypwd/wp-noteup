@@ -1,4 +1,10 @@
 <?php
+/**
+ * Base.
+ *
+ * @package aubreypwd\WPNoteup
+ * @since  1.1.0
+ */
 
 /**
  * Base plugin class.
@@ -61,7 +67,7 @@ class WP_NoteUp_Plugin {
 		// Set the name and version based on headers.
 		$this->version = $this->get_plugin_info( 'Version' );
 
-		// Hooks
+		// Hooks.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 	}
@@ -71,7 +77,6 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
-	 * @return void
 	 */
 	function set_plugin_info() {
 		$this->plugin_headers = get_file_data( $this->plugin_file, array(
@@ -119,18 +124,36 @@ class WP_NoteUp_Plugin {
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 *
-	 * @param  string  $key The key in $_REQUEST[$key].
-	 * @param  array $filter The filter to run in the format of array( $instance, 'callback' ).
+	 * @param string $key    The key in $_REQUEST[$key].
+	 * @param array  $filter The filter to run in the format of array( $instance, 'callback' ).
 	 *
 	 * @return mixed|false The value after all the filters are run, or false if it doesn't exist in $_REQUEST.
 	 */
-	function get_request( $key, $filter = false ) {
-		if ( $key && isset( $_REQUEST[ $key ] ) ) {
-			if ( $filter ) {
-				add_filter( 'wp_noteup_get_request', $filter );
+	function get_request( $key, $filter = 'wp_noteup_get_request' ) {
+		if ( $key && isset( $_REQUEST[ $key ] ) ) { // @codingStandardsIgnoreLine: No Nonce required.
+
+			// The value to save.
+			$original_value = sanitize_text_field( $_REQUEST[ $key ] ); // @codingStandardsIgnoreLine: No Nonce required.
+
+			// The value to save, we'll filter it later.
+			$value = $original_value;
+
+			/**
+			 * Filter the value.
+			 *
+			 * @author Aubrey Portwood
+			 * @since  1.0.0
+			 *
+			 * @var string
+			 */
+			$value = apply_filters( $filter, $value );
+
+			if ( ! is_string( $value ) ) {
+
+				// The filter broke the value, so return the original.
+				return $original_value;
 			}
-			$value = $_REQUEST[ $key ];
-			$value = apply_filters( 'wp_noteup_get_request', $value );
+
 			return $value;
 		} else {
 			return false;
@@ -143,12 +166,14 @@ class WP_NoteUp_Plugin {
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 *
-	 * @param string $context The context for what the meta value is.
 	 * @param mixed $post Any data needed to be passed, usually $post.
 	 *
 	 * @return string The value of the noteup.
 	 */
 	function get_noteup( $post ) {
+
+		// The value of the note.
+		$original_value = get_post_meta( $post->ID, 'wp-noteup', true );
 
 		/**
 		 * Filter the noteup data.
@@ -158,7 +183,15 @@ class WP_NoteUp_Plugin {
 		 *
 		 * @var  string The data (note).
 		 */
-		return apply_filters( 'wp_noteup_get_noteup', get_post_meta( $post->ID, 'wp-noteup', true ) );
+		$value = apply_filters( 'wp_noteup_get_noteup', $value );
+
+		if ( ! is_string( $value ) ) {
+
+			// Filter broke the value, use original.
+			return $original_value;
+		}
+
+		return $value;
 	}
 
 	/**
@@ -166,8 +199,6 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
-	 *
-	 * @return void
 	 */
 	public function enqueue_scripts() {
 		$this->enqueue_only_on_post_edit_screen();
@@ -201,8 +232,6 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
-	 *
-	 * @return void
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( 'wp-noteup-css', plugins_url( 'css/wp-noteup.css', $this->plugin_file ), array(), $this->version, 'all' );
