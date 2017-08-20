@@ -221,7 +221,7 @@ class WP_NoteUp_Post_Type_Settings {
 	public function get_cpts() {
 		$post_types = get_post_types();
 
-		$incompatible_post_types = array(
+		$exclude_post_types = array(
 			'revision',
 			'nav_menu_item',
 			'custom_css',
@@ -233,7 +233,7 @@ class WP_NoteUp_Post_Type_Settings {
 			'page',
 		);
 
-		foreach ( $incompatible_post_types as $post_type ) {
+		foreach ( $exclude_post_types as $post_type ) {
 			if ( isset( $post_types[ $post_type ] ) ) {
 				unset( $post_types[ $post_type ] );
 			}
