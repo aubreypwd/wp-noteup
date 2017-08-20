@@ -44,7 +44,7 @@ class WP_NoteUp_WP_Error {
 	 *
 	 * @param  string $error_slug   The slug of the error.
 	 *
-	 * @return WP_Error             The WP_Error for that slug.
+	 * @return WP_Error The WP_Error for that slug.
 	 */
 	function get_error( $error_slug ) {
 		return $this->errors[ $error_slug ];

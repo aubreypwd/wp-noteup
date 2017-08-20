@@ -164,7 +164,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @author Aubrey Portwood
 	 * @since  1.2.0
 	 *
-	 * @param  string  $cpt The CPT name.
+	 * @param string $cpt The CPT name.
 	 */
 	private function is_checked( $cpt ) {
 		if ( $this->checked( $cpt ) ) {
