@@ -70,4 +70,4 @@ Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
 
 == Upgrade Notice ==
 
-Fun bells and whistles.
+This update will allow you to add notes to other post types!
