@@ -3,12 +3,13 @@
  * Plugin Name: WP NoteUp
  * Plugin URI: https://wordpress.org/plugins/wp-noteup/
  * Description: WP NoteUp allows you to take simple notes when you're editing your posts or pages.
- * Version: 1.2.1
+ * Version: 1.3
  * Author: Aubrey Portwood
  * Author URI: http://aubreypwd.com/
  * Text Domain: wp-noteup
  *
  * @package aubreypwd\WPNoteup
+ * @since  1.0.0
  */
 
 // Make sure we aren't colliding with another function (rare?).
@@ -39,11 +40,11 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		global $wp_noteup_instances;
 
 		// Required files.
-		require_once( 'class/class-wp-noteup-plugin.php' );
-		require_once( 'class/class-wp-noteup-cmb2.php' );
-		require_once( 'class/class-wp-noteup-wp-error.php' );
-		require_once( 'class/class-wp-noteup-core.php' );
-		require_once( 'class/class-wp-noteup-post-type-settings.php' );
+		require_once 'class/class-wp-noteup-plugin.php';
+		require_once 'class/class-wp-noteup-cmb2.php';
+		require_once 'class/class-wp-noteup-wp-error.php';
+		require_once 'class/class-wp-noteup-core.php';
+		require_once 'class/class-wp-noteup-post-type-settings.php';
 
 		// Instances.
 		$wp_noteup_instances['WP_NoteUp_Plugin']             = new WP_NoteUp_Plugin();
