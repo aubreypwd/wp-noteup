@@ -45,13 +45,15 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		require_once 'class/class-wp-noteup-wp-error.php';
 		require_once 'class/class-wp-noteup-core.php';
 		require_once 'class/class-wp-noteup-post-type-settings.php';
+		require_once 'class/class-wp-noteup-remember-note-height.php';
 
 		// Instances.
-		$wp_noteup_instances['WP_NoteUp_Plugin']             = new WP_NoteUp_Plugin();
-		$wp_noteup_instances['WP_NoteUp_CMB2']               = new WP_NoteUp_CMB2();
-		$wp_noteup_instances['WP_NoteUp_WP_Error']           = new WP_NoteUp_WP_Error();
-		$wp_noteup_instances['WP_NoteUp_Core']               = new WP_NoteUp_Core();
-		$wp_noteup_instances['WP_NoteUp_Post_Type_Settings'] = new WP_NoteUp_Post_Type_Settings();
+		$wp_noteup_instances['WP_NoteUp_Plugin']               = new WP_NoteUp_Plugin();
+		$wp_noteup_instances['WP_NoteUp_CMB2']                 = new WP_NoteUp_CMB2();
+		$wp_noteup_instances['WP_NoteUp_WP_Error']             = new WP_NoteUp_WP_Error();
+		$wp_noteup_instances['WP_NoteUp_Core']                 = new WP_NoteUp_Core();
+		$wp_noteup_instances['WP_NoteUp_Post_Type_Settings']   = new WP_NoteUp_Post_Type_Settings();
+		$wp_noteup_instances['WP_NoteUp_Remember_Note_Height'] = new WP_NoteUp_Remember_Note_Height();
 	}
 
 	/**

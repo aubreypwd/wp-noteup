@@ -157,7 +157,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @return array The post types.
 	 */
-	private function object_types() {
+	public function object_types() {
 		$defaults = array( 'post', 'page' );
 		$user_cpts = wp_noteup( 'Post_Type_Settings' )->get_option();
 

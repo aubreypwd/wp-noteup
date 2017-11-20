@@ -20,7 +20,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @author Aubrey Portwood
 	 * @since  1.2.0
 	 */
-	function __construct() {
+	public function __construct() {
 		add_action( 'admin_init', array( $this, 'wp_settings' ) );
 		add_action( 'admin_init', array( $this, 'save' ) );
 	}
@@ -169,7 +169,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 */
 	private function is_checked( $cpt ) {
 		if ( $this->checked( $cpt ) ) {
-			?>checked<?php
+			?>checked<?php // @codingStandardsIgnoreLine: We don't want separate lines here.
 		}
 	}
 

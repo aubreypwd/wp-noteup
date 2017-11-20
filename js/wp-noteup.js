@@ -7,7 +7,7 @@
 
 /* globals jQuery */
 
-if ( ! window.hasOwnProperty( 'aubreyPwdWPNoteUp' ) && 1 === 2 ) { // Yeah, it's disabled, read below if you must.
+if ( ! window.hasOwnProperty( 'wpNoteUp' ) ) { // Yeah, it's disabled, read below if you must.
 
 	/*
 	 * Shared Functionality Module.
@@ -15,7 +15,7 @@ if ( ! window.hasOwnProperty( 'aubreyPwdWPNoteUp' ) && 1 === 2 ) { // Yeah, it's
 	 * @author Aubrey Portwood
 	 * @since  1.1.4
 	 */
-	window.aubreyPwdWPNoteUp = ( function( $, pub ) {
+	window.wpNoteUp = ( function( $, pub ) {
 
 		/**
 		 * Nothing here yet.
