@@ -119,9 +119,10 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @return void Early bail if there are no other CPT's.
 	 */
 	public function html() {
+		$cpts = $this->get_cpts();
 
 		// No CPT's to choose from.
-		if ( empty( $this->get_cpts() ) ) {
+		if ( empty( $cpts ) ) {
 			?>
 			<p class="description"><?php esc_html_e( 'No other post types. This is already enabled on posts and pages by default.', 'wp-noteup' ); ?></p>
 			<?php
