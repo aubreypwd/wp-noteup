@@ -75,11 +75,11 @@ class WP_NoteUp_CMB2 {
 		 * @var array
 		 */
 		$cmb2_args = apply_filters( 'wp_noteup_cmb2', array(
-			'id'            => 'wp-noteup-cmb2',
-			'title'         => esc_html( $name ),
-			'object_types'  => $this->object_types(),
-			'context'       => 'normal',
-			'show_names'    => false, // Show field names on the left.
+			'id'           => 'wp-noteup-cmb2',
+			'title'        => esc_html( $name ),
+			'object_types' => $this->object_types(),
+			'context'      => 'normal',
+			'show_names'   => false, // Show field names on the left.
 		) );
 
 		// Does this have the required keys?
@@ -112,16 +112,16 @@ class WP_NoteUp_CMB2 {
 			 * @author Aubrey Portwood
 			 * @since  1.2.0
 			 */
-			'name' => $name,
-			'id'   => 'wp-noteup',
-			'type' => 'wysiwyg',
+			'name'    => $name,
+			'id'      => 'wp-noteup',
+			'type'    => 'wysiwyg',
 			'options' => array(
 				'wpautop'       => true,
 				'media_buttons' => true,
 				'textarea_rows' => 8,
 				'teeny'         => true,
 				'dfw'           => true,
-				'tinymce' => array(
+				'tinymce'       => array(
 					'paste_remove_styles'          => true,
 					'paste_remove_spans'           => true,
 					'paste_strip_class_attributes' => true,
@@ -129,7 +129,7 @@ class WP_NoteUp_CMB2 {
 					'content_css'                  => false,
 					'toolbar1'                     => 'bold,italic,bullist,link,unlink',
 				),
-				'quicktags' => false,
+				'quicktags'     => false,
 			),
 		) );
 
@@ -157,7 +157,7 @@ class WP_NoteUp_CMB2 {
 	 * @return array The post types.
 	 */
 	private function object_types() {
-		$defaults = array( 'post', 'page' );
+		$defaults  = array( 'post', 'page' );
 		$user_cpts = wp_noteup( 'Post_Type_Settings' )->get_option();
 
 		if ( ! is_array( $user_cpts ) ) {
