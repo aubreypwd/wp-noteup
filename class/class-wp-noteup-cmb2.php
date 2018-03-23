@@ -39,18 +39,17 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1.0
+	 * @since  1.2.2 CMB2 is now loaded via composer.
 	 *
 	 * @return boolean If CMB2 was loaded or not.
 	 */
 	public function include_cmb2() {
-		if ( ! class_exists( 'CMB2' ) ) {
-			if ( require_once( dirname( __FILE__ ) . '/../cmb2/init.php' ) ) {
-				$this->cmb2_loaded = true;
-				return $this->cmb2_loaded;
-			}
+
+		// Note that CMB2 is now loaded via composer's autoloader.
+		if ( defined( 'CMB2_LOADED' ) && CMB2_LOADED ) {
+			return $this->cmb2_loaded = true;
 		} else {
-			$this->cmb2_loaded = true;
-			return $this->cmb2_loaded;
+			return $this->cmb2_loaded = false;
 		}
 	}
 

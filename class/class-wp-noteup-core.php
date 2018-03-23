@@ -38,7 +38,7 @@ class WP_NoteUp_Core {
 		if ( wp_noteup( 'CMB2' )->include_cmb2() ) {
 			add_action( 'cmb2_init', array( wp_noteup( 'CMB2' ), 'cmb2' ) );
 		} else {
-			return wp_noteup( 'Error' )->get_error( 'cmb2_not_loaded' );
+			return wp_noteup( 'WP_Error' )->get_error( 'cmb2_not_loaded' );
 		}
 
 		return true;

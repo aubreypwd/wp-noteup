@@ -9,6 +9,7 @@
  * Text Domain: wp-noteup
  *
  * @package aubreypwd\WPNoteup
+ * @since   1.0.0
  */
 
 // Make sure we aren't colliding with another function (rare?).
@@ -39,11 +40,12 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		global $wp_noteup_instances;
 
 		// Required files.
-		require_once( 'class/class-wp-noteup-plugin.php' );
-		require_once( 'class/class-wp-noteup-cmb2.php' );
-		require_once( 'class/class-wp-noteup-wp-error.php' );
-		require_once( 'class/class-wp-noteup-core.php' );
-		require_once( 'class/class-wp-noteup-post-type-settings.php' );
+		require_once 'vendor/autoload.php';
+		require_once 'class/class-wp-noteup-plugin.php';
+		require_once 'class/class-wp-noteup-cmb2.php';
+		require_once 'class/class-wp-noteup-wp-error.php';
+		require_once 'class/class-wp-noteup-core.php';
+		require_once 'class/class-wp-noteup-post-type-settings.php';
 
 		// Instances.
 		$wp_noteup_instances['WP_NoteUp_Plugin']             = new WP_NoteUp_Plugin();
