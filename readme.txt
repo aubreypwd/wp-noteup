@@ -4,7 +4,7 @@ Donate link: http://github.com/aubreypwd/wp-noteup
 Tags: notes, note, markup, text, footnotes, research
 Requires at least: 3.8
 Tested up to: 4.8.1
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,11 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 1. WP NoteUp in a Post
 
 == Changelog ==
+
+= 1.2.1 =
+
+Quick update to fix problems when using < PHP 5.5 that was causing "Fatal error: Can't use method return value in write context in ...wp-noteup/class/class-wp-noteup-post-type-settings.php"
+Tested down to PHP 5.2.4
 
 = 1.2 =
 
@@ -64,5 +69,4 @@ Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
 
 == Upgrade Notice ==
 
-This update will allow you to add notes to other post types! Just update and
-visit Settings > General to enable on other post types.
+This update fixes some compatibility issues with PHP versions lower than 5.5. If v1.2 is working for you, you don't need to upgrade now.
