@@ -30,7 +30,7 @@ class WP_NoteUp_WP_Error {
 	 * @author Aubrey Portwood
 	 * @since  1.1.0
 	 */
-	function __construct() {
+	public function __construct() {
 		$this->errors = array(
 			'cmb2_not_loaded' => new WP_Error( '1', __( 'Our CMB2 library failed to load.', 'wp-noteup' ) ),
 		);
@@ -46,7 +46,7 @@ class WP_NoteUp_WP_Error {
 	 *
 	 * @return WP_Error The WP_Error for that slug.
 	 */
-	function get_error( $error_slug ) {
+	public function get_error( $error_slug ) {
 		return $this->errors[ $error_slug ];
 	}
 }

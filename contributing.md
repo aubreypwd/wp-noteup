@@ -1,1 +1,1 @@
-For information on contributing see [readme.md](readme.md).
+See [Contributing](https://github.com/aubreypwd/contributing/wiki)

@@ -20,7 +20,7 @@ class WP_NoteUp_Post_Type_Settings {
 	 * @author Aubrey Portwood
 	 * @since  1.2.0
 	 */
-	function __construct() {
+	public function __construct() {
 		add_action( 'admin_init', array( $this, 'wp_settings' ) );
 		add_action( 'admin_init', array( $this, 'save' ) );
 	}
