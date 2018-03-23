@@ -24,6 +24,12 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 
 == Changelog ==
 
+= 1.2.2 =
+
+Update of CMB2 to the latest version to fix [issue with PHP 7.2](https://github.com/aubreypwd/wp-noteup/issues/68)
+
+CMB2 is now maintained/updated using Composer
+
 = 1.2.1 =
 
 Quick update to fix problems when using < PHP 5.5 that was causing "Fatal error: Can't use method return value in write context in ...wp-noteup/class/class-wp-noteup-post-type-settings.php"
@@ -69,4 +75,4 @@ Super thanks to the authors of [CMB2](https://github.com/WebDevStudios/CMB2).
 
 == Upgrade Notice ==
 
-This update fixes some compatibility issues with PHP versions lower than 5.5. If v1.2 is working for you, you don't need to upgrade now.
+If you are having problems with NoteUp metaboxes not showing up on PHP 7.2, you can upgrade to fix that.
