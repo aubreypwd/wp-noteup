@@ -71,9 +71,6 @@ if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
 		// Fix sortable when page is ready.
 		$( document ).ready( fixSortableIssue );
 
-		// Pass back to base class :).
-		window.WPNoteUp.modules.push( 'sortable', pub );
-
 		// Send back our public object.
 		return pub;
 	} ( jQuery, {} ) );
