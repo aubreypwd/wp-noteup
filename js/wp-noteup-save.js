@@ -1,5 +1,5 @@
 /**
- * Disabled metabox from being sortable.
+ * Saving Notes via AJAX.
  *
  * @package aubreypwd\WPNoteup
  * @since  1.3.0
@@ -9,7 +9,7 @@
 if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 
 	/*
-	 * Main Module.
+	 * Saving Notes via AJAX.
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.3.0 https://github.com/aubreypwd/wp-noteup/issues/49
