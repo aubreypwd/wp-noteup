@@ -214,11 +214,6 @@ class WP_NoteUp_Plugin {
 	 */
 	private function enqueue_only_on_post_edit_screen() {
 
-		// $classic_editor = isset( $_GET['classic-editor'] );
-		// if ( defined( 'GUTENBERG_VERSION' ) && GUTENBERG_VERSION && ! $classic_editor ) {
-		// 	return;
-		// }
-
 		// The current screen in the admin.
 		$screen = get_current_screen();
 
