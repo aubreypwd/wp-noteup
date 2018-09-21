@@ -1,0 +1,58 @@
+[
+    {
+        "name": "cmb2/cmb2",
+        "version": "v2.4.2",
+        "version_normalized": "2.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:CMB2/CMB2.git",
+            "reference": "fdcb80985e4b4a4c7118b2ecce090af4a3309958"
+        },
+        "require": {
+            "php": ">5.2.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "suggest": {
+            "composer/installers": "~1.0"
+        },
+        "time": "2018-05-29T14:23:29+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "source",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Justin Sternberg",
+                "email": "justin@dsgnwrks.pro",
+                "homepage": "https://dsgnwrks.pro",
+                "role": "Developer"
+            },
+            {
+                "name": "WebDevStudios",
+                "email": "contact@webdevstudios.com",
+                "homepage": "https://github.com/WebDevStudios",
+                "role": "Developer"
+            },
+            {
+                "name": "Zao",
+                "email": "office@zao.com",
+                "homepage": "http://zao.is",
+                "role": "Developer"
+            }
+        ],
+        "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
+        "homepage": "https://github.com/CMB2/CMB2",
+        "keywords": [
+            "metabox",
+            "plugin",
+            "wordpress"
+        ],
+        "support": {
+            "issues": "https://github.com/CMB2/CMB2/issues",
+            "source": "http://wordpress.org/support/plugin/cmb2"
+        }
+    }
+]

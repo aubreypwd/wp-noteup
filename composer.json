@@ -1,0 +1,20 @@
+{
+	"repositories": [
+		{
+			"type": "git",
+			"url": "git@github.com:CMB2/CMB2.git"
+		}
+	],
+  "name": "aubreypwd/wp-noteup",
+  "description": "WP NoteUp allows you to take simple notes when you're editing your posts, pages, or other custom post types.",
+  "license": "GPLv2 or later",
+  "authors": [
+      {
+          "name": "Aubrey Portwood",
+          "email": "aubreypwd@gmail.com"
+      }
+  ],
+  "require": {
+  	"cmb2/cmb2": "2.4.2"
+  }
+}

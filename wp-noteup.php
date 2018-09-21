@@ -15,6 +15,9 @@
 // Make sure we aren't colliding with another function (rare?).
 if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) && ! isset( $wp_noteup_instances ) ) {
 
+	// Load composer stuffs.
+	require_once 'vendor/autoload.php';
+
 	/**
 	 * A cheater way to access other instances.
 	 *
@@ -63,6 +66,7 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	 * @param string $instance The name of the instance w/out WP_NoteUp.
 	 *
 	 * @return object The instance.
+	 * @throws Exception On non-existing instance.
 	 */
 	function wp_noteup( $instance ) {
 		global $wp_noteup_instances;
@@ -70,6 +74,8 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		if ( isset( $wp_noteup_instances[ "WP_NoteUp_{$instance}" ] ) ) {
 			return $wp_noteup_instances[ "WP_NoteUp_{$instance}" ];
 		}
+
+		throw new Exception( "Could not find {$instance}" );
 	}
 
 	// Init!

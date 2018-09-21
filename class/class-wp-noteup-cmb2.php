@@ -35,23 +35,23 @@ class WP_NoteUp_CMB2 {
 	private $cmb2;
 
 	/**
-	 * Includes the plugin files.
+	 * Is CMB2 loaded?
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1.0
+	 *
+	 * @since  1.3.0 We are now loading this via the vendor folder.
 	 *
 	 * @return boolean If CMB2 was loaded or not.
 	 */
 	public function include_cmb2() {
 		if ( ! class_exists( 'CMB2' ) ) {
-			if ( require_once dirname( __FILE__ ) . '/../cmb2/init.php' ) {
-				$this->cmb2_loaded = true;
-				return $this->cmb2_loaded;
-			}
-		} else {
-			$this->cmb2_loaded = true;
-			return $this->cmb2_loaded;
+
+			// Load the vendor since composer isn't :/.
+			return $this->cmb2_loaded = require_once dirname( __FILE__ ) . '/../vendor/cmb2/cmb2/init.php';
 		}
+
+		return $this->cmb2_loaded = false;
 	}
 
 	/**
