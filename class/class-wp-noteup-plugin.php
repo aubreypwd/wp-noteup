@@ -216,11 +216,22 @@ class WP_NoteUp_Plugin {
 
 		// The current screen in the admin.
 		$screen = get_current_screen();
-
 		if ( is_a( $screen, 'WP_Screen' ) && 'post' === $screen->base ) {
 
+			wp_enqueue_script( 'jquery' );
+
 			// Fix sortable issue.
-			wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery', 'wp-noteup-js' ), $this->version, true );
+			wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
+
+			// Save our data over AJAX.
+			wp_enqueue_script( 'wp-noteup-js-save', plugins_url( 'js/wp-noteup-save.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
+			wp_localize_script( 'wp-noteup-js-save', 'WPNoteUpSave', array(
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => wp_create_nonce( 'wp_noteup_save' ),
+				'l10n'    => array(
+					'ajaxError' => esc_html( __( 'Sorry, there was an error and your notes may not have been saved.', 'wp-noteup' ) ),
+				),
+			) );
 		}
 	}
 

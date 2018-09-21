@@ -6,7 +6,6 @@
  */
 
 /* globals jQuery */
-
 if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
 
 	/*

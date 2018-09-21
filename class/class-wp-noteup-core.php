@@ -20,7 +20,7 @@ class WP_NoteUp_Core {
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 */
-	function __construct() {
+	public function __construct() {
 
 		// Load CMB2.
 		$this->cmb2();
