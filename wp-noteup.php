@@ -15,9 +15,6 @@
 // Make sure we aren't colliding with another function (rare?).
 if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) && ! isset( $wp_noteup_instances ) ) {
 
-	// Load composer stuffs.
-	require_once 'vendor/autoload.php';
-
 	/**
 	 * A cheater way to access other instances.
 	 *
