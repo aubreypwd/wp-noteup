@@ -59,7 +59,11 @@ class WP_NoteUp_Remember_Note_Height {
 		$height = get_user_meta( get_current_user_id(), 'wp_noteup_editor_height', true );
 
 		if ( ! $height ) {
-			$height = 250;
+			return 250;
+		}
+
+		if ( $height <= 250 ) {
+			return 250;
 		}
 
 		return $height;
