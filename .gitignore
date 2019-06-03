@@ -8,4 +8,3 @@ deploy-git-wordpress-org.sh
 node_modules
 /svn
 /vendor/cmb2/cmb2/.git*
-/vendor/composer/
