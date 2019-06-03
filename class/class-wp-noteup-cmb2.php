@@ -37,7 +37,7 @@ class WP_NoteUp_CMB2 {
 	/**
 	 * Construct
 	 *
-	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @author Aubrey Portwood <code@aubreypwd.com
 	 * @since  1.3.0
 	 */
 	public function __construct() {

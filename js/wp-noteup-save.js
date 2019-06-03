@@ -19,7 +19,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Private methods.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @type {Object}
@@ -29,7 +29,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Data of the last save.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @type {String}
@@ -39,7 +39,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Ajax handler.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @type {Object} When defined, will be jQuery $.ajax object.
@@ -49,7 +49,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Save every X seconds.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @type {Number}
@@ -59,7 +59,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Cached editor.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @type {String}|{Object} Becomes the tinyMCE object when we find it.
@@ -69,7 +69,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Get our editor.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @param  {Boolean} cached Send false to get a fresh element.
@@ -98,7 +98,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 				/**
 				 * Make sure getContent calls come back with something empty.
 				 *
-				 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+				 * @author Aubrey Portwood <code@aubreypwd.com
 				 * @since  1.3.0
 				 *
 				 * @return {String} Empty string.
@@ -112,7 +112,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Save the content.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @param  {String} content Content from the editor.
@@ -146,7 +146,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 				/**
 				 * Success
 				 *
-				 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+				 * @author Aubrey Portwood <code@aubreypwd.com
 				 * @since  1.3.0
 				 */
 				success: function() {
@@ -158,7 +158,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 				/**
 				 * Failure
 				 *
-				 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+				 * @author Aubrey Portwood <code@aubreypwd.com
 				 * @since  1.3.0
 				 *
 				 * @param  {Object} jqXHR  XHR.
@@ -179,7 +179,7 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 		/**
 		 * Watch our editor for changes.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 */
 		prv.listen = function() {

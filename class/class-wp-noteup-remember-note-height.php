@@ -32,7 +32,7 @@ class WP_NoteUp_Remember_Note_Height {
 	/**
 	 * Remember the height.
 	 *
-	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @author Aubrey Portwood <code@aubreypwd.com
 	 * @since  1.3.0
 	 */
 	public function remember() {
@@ -50,7 +50,7 @@ class WP_NoteUp_Remember_Note_Height {
 	/**
 	 * Get the remembered height.
 	 *
-	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @author Aubrey Portwood <code@aubreypwd.com
 	 * @since  1.3.0
 	 *
 	 * @return int The height.
@@ -68,7 +68,7 @@ class WP_NoteUp_Remember_Note_Height {
 	/**
 	 * Sanitize the height from AJAX.
 	 *
-	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @author Aubrey Portwood <code@aubreypwd.com
 	 * @since  1.3.0
 	 *
 	 * @param  string $height Height e.g. 200px.
@@ -101,7 +101,7 @@ class WP_NoteUp_Remember_Note_Height {
 	/**
 	 * Is the current Screen what we want?
 	 *
-	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @author Aubrey Portwood <code@aubreypwd.com
 	 * @since  1.3.0
 	 *
 	 * @return bool

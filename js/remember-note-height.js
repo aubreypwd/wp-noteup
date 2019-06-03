@@ -20,7 +20,7 @@ if ( window.hasOwnProperty( 'wpNoteUpRememberHeight' ) ) {
 		/**
 		 * Remember the height of the element.
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @param  {Object} $el Element.
@@ -42,7 +42,7 @@ if ( window.hasOwnProperty( 'wpNoteUpRememberHeight' ) ) {
 		/**
 		 * Track the Element
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 *
 		 * @param  {Object} $el Element.
@@ -62,7 +62,7 @@ if ( window.hasOwnProperty( 'wpNoteUpRememberHeight' ) ) {
 		/**
 		 * Find Height Element
 		 *
-		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @author Aubrey Portwood <code@aubreypwd.com
 		 * @since  1.3.0
 		 */
 		function find() {
