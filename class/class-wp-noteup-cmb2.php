@@ -45,12 +45,6 @@ class WP_NoteUp_CMB2 {
 	 * @return boolean If CMB2 was loaded or not.
 	 */
 	public function include_cmb2() {
-		if ( ! class_exists( 'CMB2' ) ) {
-
-			// Load the vendor since composer isn't :/.
-			return $this->cmb2_loaded = require_once dirname( __FILE__ ) . '/../vendor/cmb2/cmb2/init.php';
-		}
-
 		return $this->cmb2_loaded = false;
 	}
 
