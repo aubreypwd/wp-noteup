@@ -13,12 +13,15 @@
     "cmb2/cmb2": "2.4.2"
   },
   "extra": {
-    "installer-name": "wds-{wp-noteup}"
+    "installer-name": "wp-noteup",
+    "installer-paths": {
+      "lib/{$name}/": ["type:wordpress-plugin"]
+    }
   },
   "authors": [
     {
       "name": "Aubrey Portwood",
-      "email": "aubreypwd@gmail.com"
+      "email": "code@aubreypwd.com"
     }
   ],
   "autoload": {
