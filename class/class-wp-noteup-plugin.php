@@ -59,8 +59,7 @@ class WP_NoteUp_Plugin {
 	 * @author Aubrey Portwood
 	 * @since 1.0.0
 	 */
-	function __construct() {
-
+	public function __construct() {
 		// Plugin information.
 		$this->set_plugin_file( dirname( __FILE__ ) . '/../wp-noteup.php' );
 		$this->set_plugin_info();
@@ -79,7 +78,7 @@ class WP_NoteUp_Plugin {
 	 * @author Aubrey Portwood
 	 * @since  1.0.0
 	 */
-	function set_plugin_info() {
+	public function set_plugin_info() {
 		$this->plugin_headers = get_file_data( $this->plugin_file, array(
 			'Plugin Name' => 'Plugin Name',
 			'Plugin URI'  => 'Plugin URI',
@@ -102,7 +101,7 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @return array       The plugin headers.
 	 */
-	function get_plugin_info( $key ) {
+	public function get_plugin_info( $key ) {
 		return $this->plugin_headers[ $key ];
 	}
 
@@ -114,9 +113,9 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @param string $file Usually __FILE__.
 	 */
-	function set_plugin_file( $file ) {
+	public function set_plugin_file( $file ) {
 		$this->plugin_file = $file;
-		$this->plugin_dir = dirname( $file );
+		$this->plugin_dir  = dirname( $file );
 	}
 
 	/**
@@ -130,7 +129,7 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @return mixed|false The value after all the filters are run, or false if it doesn't exist in $_REQUEST.
 	 */
-	function get_request( $key, $filter = 'wp_noteup_get_request' ) {
+	public function get_request( $key, $filter = 'wp_noteup_get_request' ) {
 		if ( $key && isset( $_REQUEST[ $key ] ) ) { // @codingStandardsIgnoreLine: No Nonce required.
 
 			// The value to save.
@@ -171,7 +170,7 @@ class WP_NoteUp_Plugin {
 	 *
 	 * @return string The value of the noteup.
 	 */
-	function get_noteup( $post ) {
+	public function get_noteup( $post ) {
 
 		// The value of the note.
 		$original_value = get_post_meta( $post->ID, 'wp-noteup', true );
@@ -231,9 +230,12 @@ class WP_NoteUp_Plugin {
 				'nonce'   => wp_create_nonce( 'wp_noteup_save' ),
 				'l10n'    => array(
 					'ajaxError' => esc_html( __( 'Sorry, there was an error and your notes may not have been saved.', 'wp-noteup' ) ),
-				)
+				),
 			) );
 		}
+
+		// Fix sortable issue.
+		wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery', 'wp-noteup-js' ), $this->version, true );
 	}
 
 	/**

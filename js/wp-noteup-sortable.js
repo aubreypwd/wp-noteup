@@ -6,7 +6,7 @@
  */
 
 /* globals jQuery */
-if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
+if ( window.hasOwnProperty( 'wpNoteUp' ) ) {
 
 	/*
 	 * Main Module.
@@ -14,7 +14,7 @@ if ( ! window.hasOwnProperty( 'WPNoteUpSortable' ) ) {
 	 * @author Aubrey Portwood
 	 * @since  1.1.4 https://github.com/aubreypwd/wp-noteup/issues/49
 	 */
-	window.WPNoteUpSortable = ( function( $, pub ) {
+	window.wpNoteUp.sortable = ( function( $, pub ) {
 
 		/**
 		 * Did we fix the sortable issue?

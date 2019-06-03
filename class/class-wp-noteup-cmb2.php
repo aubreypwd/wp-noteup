@@ -95,6 +95,7 @@ class WP_NoteUp_CMB2 {
 	 * @return void Early bail if filters break the metaboxes we want to add.
 	 */
 	public function cmb2() {
+		global $wp_noteup_instances;
 
 		// The name of the metabox.
 		$name = esc_html__( 'Notes', 'wp-noteup' );
@@ -161,6 +162,7 @@ class WP_NoteUp_CMB2 {
 					'wpeditimage_disable_captions' => true,
 					'content_css'                  => false,
 					'toolbar1'                     => 'bold,italic,bullist,link,unlink',
+					'height'                       => $wp_noteup_instances['WP_NoteUp_Remember_Note_Height']->get_height(),
 				),
 				'quicktags'     => false,
 			),
@@ -189,7 +191,7 @@ class WP_NoteUp_CMB2 {
 	 *
 	 * @return array The post types.
 	 */
-	private function object_types() {
+	public function object_types() {
 		$defaults = array(
 			'post',
 			'page',
