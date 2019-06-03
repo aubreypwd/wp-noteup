@@ -1,20 +1,34 @@
 {
-	"repositories": [
-		{
-			"type": "git",
-			"url": "git@github.com:CMB2/CMB2.git"
-		}
-	],
   "name": "aubreypwd/wp-noteup",
   "description": "WP NoteUp allows you to take simple notes when you're editing your posts, pages, or other custom post types.",
-  "license": "GPLv2 or later",
-  "authors": [
-      {
-          "name": "Aubrey Portwood",
-          "email": "aubreypwd@gmail.com"
-      }
-  ],
+  "homepage": "https://github.com/aubreypwd/wp-noteup",
+  "license": "GPL-2.0+",
+  "support": {
+    "issues": "https://github.com/aubreypwd/wp-noteup/issues",
+    "source": "https://github.com/aubreypwd/wp-noteup"
+  },
+  "type": "wordpress-plugin",
   "require": {
-  	"cmb2/cmb2": "2.4.2"
-  }
+    "composer/installers": "~1.0",
+    "cmb2/cmb2": "2.4.2"
+  },
+  "extra": {
+    "installer-name": "wds-{wp-noteup}"
+  },
+  "authors": [
+    {
+      "name": "Aubrey Portwood",
+      "email": "aubreypwd@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:CMB2/CMB2.git"
+    }
+  ]
 }
