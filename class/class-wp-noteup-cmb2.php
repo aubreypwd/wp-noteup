@@ -35,23 +35,55 @@ class WP_NoteUp_CMB2 {
 	private $cmb2;
 
 	/**
-	 * Includes the plugin files.
+	 * Construct
+	 *
+	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @since  1.3.0
+	 */
+	public function __construct() {
+		add_action( 'wp_ajax_wp_noteup_save', [ $this, 'ajax_save' ] );
+	}
+
+	/**
+	 * Save autosave.
+	 *
+	 * @author Aubrey Portwood <code@aubreypwd.com>
+	 * @since  1.3.0
+	 */
+	public function ajax_save() {
+		check_admin_referer( 'wp_noteup_save', 'nonce' );
+
+		$post_id = filter_input( INPUT_POST, 'post', FILTER_SANITIZE_NUMBER_INT );
+		$content = wp_kses_post( filter_input( INPUT_POST, 'content' ) );
+
+		if ( ! $post_id ) {
+			wp_send_json_error( 'No Post ID.' );
+		}
+
+		wp_send_json_success( [
+			'post'   => $post_id,
+			'update' => update_post_meta( $post_id, 'wp-noteup', $content ),
+		] );
+	}
+
+	/**
+	 * Is CMB2 loaded?
 	 *
 	 * @author Aubrey Portwood
 	 * @since  1.1.0
+	 *
+	 * @since  1.3.0 We are now loading this via the vendor folder.
 	 *
 	 * @return boolean If CMB2 was loaded or not.
 	 */
 	public function include_cmb2() {
 		if ( ! class_exists( 'CMB2' ) ) {
-			if ( require_once( dirname( __FILE__ ) . '/../cmb2/init.php' ) ) {
-				$this->cmb2_loaded = true;
-				return $this->cmb2_loaded;
-			}
-		} else {
-			$this->cmb2_loaded = true;
-			return $this->cmb2_loaded;
+
+			// Load the vendor since composer isn't :/.
+			return $this->cmb2_loaded = require_once dirname( __FILE__ ) . '/../lib/cmb2/init.php';
 		}
+
+		return $this->cmb2_loaded = false;
 	}
 
 	/**
@@ -63,6 +95,7 @@ class WP_NoteUp_CMB2 {
 	 * @return void Early bail if filters break the metaboxes we want to add.
 	 */
 	public function cmb2() {
+		global $wp_noteup_instances;
 
 		// The name of the metabox.
 		$name = esc_html__( 'Notes', 'wp-noteup' );
@@ -76,11 +109,11 @@ class WP_NoteUp_CMB2 {
 		 * @var array
 		 */
 		$cmb2_args = apply_filters( 'wp_noteup_cmb2', array(
-			'id'            => 'wp-noteup-cmb2',
-			'title'         => esc_html( $name ),
-			'object_types'  => $this->object_types(),
-			'context'       => 'normal',
-			'show_names'    => false, // Show field names on the left.
+			'id'           => 'wp-noteup-cmb2',
+			'title'        => esc_html( $name ),
+			'object_types' => $this->object_types(),
+			'context'      => 'normal',
+			'show_names'   => false, // Show field names on the left.
 		) );
 
 		// Does this have the required keys?
@@ -113,24 +146,25 @@ class WP_NoteUp_CMB2 {
 			 * @author Aubrey Portwood
 			 * @since  1.2.0
 			 */
-			'name' => $name,
-			'id'   => 'wp-noteup',
-			'type' => 'wysiwyg',
+			'name'    => $name,
+			'id'      => 'wp-noteup',
+			'type'    => 'wysiwyg',
 			'options' => array(
 				'wpautop'       => true,
 				'media_buttons' => true,
 				'textarea_rows' => 8,
 				'teeny'         => true,
 				'dfw'           => true,
-				'tinymce' => array(
+				'tinymce'       => array(
 					'paste_remove_styles'          => true,
 					'paste_remove_spans'           => true,
 					'paste_strip_class_attributes' => true,
 					'wpeditimage_disable_captions' => true,
 					'content_css'                  => false,
 					'toolbar1'                     => 'bold,italic,bullist,link,unlink',
+					'height'                       => $wp_noteup_instances['WP_NoteUp_Remember_Note_Height']->get_height(),
 				),
-				'quicktags' => false,
+				'quicktags'     => false,
 			),
 		) );
 
@@ -158,7 +192,11 @@ class WP_NoteUp_CMB2 {
 	 * @return array The post types.
 	 */
 	public function object_types() {
-		$defaults = array( 'post', 'page' );
+		$defaults = array(
+			'post',
+			'page',
+		);
+
 		$user_cpts = wp_noteup( 'Post_Type_Settings' )->get_option();
 
 		if ( ! is_array( $user_cpts ) ) {

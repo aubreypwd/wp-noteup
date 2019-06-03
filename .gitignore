@@ -7,3 +7,6 @@ deploy-git-wordpress-org.sh
 /*svn*
 node_modules
 /svn
+/lib/cmb2/.git*
+/vendor/
+composer.lock

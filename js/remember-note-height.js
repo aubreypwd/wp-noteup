@@ -6,7 +6,7 @@
  */
 
 /* globals jQuery */
-if ( window.hasOwnProperty( 'wpNoteUp' ) ) {
+if ( window.hasOwnProperty( 'wpNoteUpRememberHeight' ) ) {
 
 	/*
 	 * Main Module.
@@ -15,22 +15,77 @@ if ( window.hasOwnProperty( 'wpNoteUp' ) ) {
 	 * @since  1.3 https://github.com/aubreypwd/wp-noteup/issues/49
 	 */
 	window.wpNoteUp.rememberNoteHeight = ( function( $, pub ) {
+		var often = 2000;
 
-		function remember() {
-			debugger;
+		/**
+		 * Remember the height of the element.
+		 *
+		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @since  1.3.0
+		 *
+		 * @param  {Object} $el Element.
+		 */
+		function remember( $el ) {
+			$.ajax( {
+				method: 'post',
+				url: pub.ajaxUrl,
+
+				// Send this data.
+				data: {
+					action: 'wp_noteup_remember_height',
+					height: $el.css( 'height' ),
+					post: $( '#post_ID' ).val()
+				}
+			} );
 		}
 
-		function init() {
-			// var $resizers = $( '.mce-flow-layout-item' );
+		/**
+		 * Track the Element
+		 *
+		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @since  1.3.0
+		 *
+		 * @param  {Object} $el Element.
+		 */
+		function track( $el ) {
+			var style = '';
 
-			// console.log( $resizers );
+			setInterval( function() {
+				if ( '' !== style && $el.attr( 'style' ) !== style ) {
+					remember( $el );
+				}
 
-			// $resizers.on( 'click', remember );
+				style = $el.attr( 'style' );
+			}, often );
 		}
 
-		$( document ).ready( init );
+		/**
+		 * Find Height Element
+		 *
+		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+		 * @since  1.3.0
+		 */
+		function find() {
+			var breakInterval = false;
+
+			var interval = setInterval( function() {
+				if ( breakInterval ) {
+					clearInterval( interval );
+				}
+
+				var $el = $( '#wp_noteup_ifr' );
+
+				if ( ! $el.length ) {
+					return;
+				}
+
+				track( $el );
+			}, often );
+		}
+
+		$( document ).ready( find );
 
 		// Send back our public object.
 		return pub;
-	} ( jQuery, {} ) );
+	} ( jQuery, window.wpNoteUpRememberHeight ) );
 }
