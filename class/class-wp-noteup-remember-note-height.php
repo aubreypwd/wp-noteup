@@ -92,7 +92,7 @@ class WP_NoteUp_Remember_Note_Height {
 			return;
 		}
 
-		wp_enqueue_script( 'wp-noteup-remember-note-height', plugins_url( 'js/remember-note-height.js', $this->wp_noteup_instances['WP_NoteUp_Plugin']->plugin_file ), array( 'jquery' ), time(), true );
+		wp_enqueue_script( 'wp-noteup-remember-note-height', plugins_url( 'js/editor-height.js', $this->wp_noteup_instances['WP_NoteUp_Plugin']->plugin_file ), array( 'jquery' ), time(), true );
 		wp_localize_script( 'wp-noteup-remember-note-height', 'wpNoteUpRememberHeight', [
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 		] );

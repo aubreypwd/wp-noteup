@@ -221,10 +221,10 @@ class WP_NoteUp_Plugin {
 			wp_enqueue_script( 'jquery' );
 
 			// Fix sortable issue.
-			wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/sortable.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
 
 			// Save our data over AJAX.
-			wp_enqueue_script( 'wp-noteup-js-save', plugins_url( 'js/wp-noteup-save.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( 'wp-noteup-js-save', plugins_url( 'js/save.js', $this->plugin_file ), array( 'jquery' ), $this->version, true );
 			wp_localize_script( 'wp-noteup-js-save', 'WPNoteUpSave', array(
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( 'wp_noteup_save' ),
@@ -233,9 +233,6 @@ class WP_NoteUp_Plugin {
 				),
 			) );
 		}
-
-		// Fix sortable issue.
-		wp_enqueue_script( 'wp-noteup-js-sortable', plugins_url( 'js/wp-noteup-sortable.js', $this->plugin_file ), array( 'jquery', 'wp-noteup-js' ), $this->version, true );
 	}
 
 	/**
