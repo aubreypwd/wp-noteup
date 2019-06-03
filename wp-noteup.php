@@ -10,6 +10,9 @@
  *
  * @package aubreypwd\WPNoteup
  * @since  1.0.0
+ *
+ * Note, the coding style in this plugin does not any longer represent my most
+ * recent coding style.
  */
 
 // Make sure we aren't colliding with another function (rare?).
@@ -77,7 +80,6 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 		throw new Exception( "Could not find {$instance}" );
 	}
 
-	// Init!
 	wp_noteup_init();
 
 } else {
@@ -85,4 +87,4 @@ if ( ! function_exists( 'wp_noteup_init' ) && ! function_exists( 'wp_noteup' ) &
 	// The function exists, not sure why!
 	wp_die( esc_html__( "Sorry but we can't activate WP NoteUp because it appears to be colliding with another theme or plugin.", 'wp-noteup' ) );
 
-} // End if().
+}
