@@ -35,6 +35,38 @@ class WP_NoteUp_CMB2 {
 	private $cmb2;
 
 	/**
+	 * Construct
+	 *
+	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @since  1.3.0
+	 */
+	public function __construct() {
+		add_action( 'wp_ajax_wp_noteup_save', [ $this, 'ajax_save' ] );
+	}
+
+	/**
+	 * Save autosave.
+	 *
+	 * @author Aubrey Portwood <code@aubreypwd.com>
+	 * @since  1.3.0
+	 */
+	public function ajax_save() {
+		check_admin_referer( 'wp_noteup_save', 'nonce' );
+
+		$post_id = filter_input( INPUT_POST, 'post', FILTER_SANITIZE_NUMBER_INT );
+		$content = wp_kses_post( filter_input( INPUT_POST, 'content' ) );
+
+		if ( ! $post_id ) {
+			wp_send_json_error( 'No Post ID.' );
+		}
+
+		wp_send_json_success( [
+			'post'   => $post_id,
+			'update' => update_post_meta( $post_id, 'wp-noteup', $content ),
+		] );
+	}
+
+	/**
 	 * Is CMB2 loaded?
 	 *
 	 * @author Aubrey Portwood

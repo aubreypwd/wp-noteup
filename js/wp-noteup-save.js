@@ -138,20 +138,33 @@ if ( window.hasOwnProperty( 'WPNoteUpSave' ) ) {
 				// Send this data.
 				data: {
 					action: 'wp_noteup_save',
-					nonce: pub.nonce
+					nonce: pub.nonce,
+					content: content,
+					post: jQuery( '#post_ID' ).val()
 				},
 
-				// Success.
-				success: function( response, status ) {
-
-					// @TODO: Add the AJAX endpoint and confirm the saved data.
+				/**
+				 * Success
+				 *
+				 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+				 * @since  1.3.0
+				 */
+				success: function() {
 
 					// Remember the last save, so if it gets passed here again we don't do an AJAX request for the same stuff.
 					prv.lastSave = content;
-
 				},
 
-				// Failure.
+				/**
+				 * Failure
+				 *
+				 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+				 * @since  1.3.0
+				 *
+				 * @param  {Object} jqXHR  XHR.
+				 * @param  {Number} status E.g. 200.
+				 * @param  {Object} error  Error.
+				 */
 				error: function( jqXHR, status, error ) {
 
 					// Tell the user this lame error message.

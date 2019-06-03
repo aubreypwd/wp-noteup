@@ -60,6 +60,7 @@ class WP_NoteUp_Plugin {
 	 * @since 1.0.0
 	 */
 	function __construct() {
+
 		// Plugin information.
 		$this->set_plugin_file( dirname( __FILE__ ) . '/../wp-noteup.php' );
 		$this->set_plugin_info();
@@ -230,7 +231,7 @@ class WP_NoteUp_Plugin {
 				'nonce'   => wp_create_nonce( 'wp_noteup_save' ),
 				'l10n'    => array(
 					'ajaxError' => esc_html( __( 'Sorry, there was an error and your notes may not have been saved.', 'wp-noteup' ) ),
-				),
+				)
 			) );
 		}
 	}
