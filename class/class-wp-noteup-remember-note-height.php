@@ -98,6 +98,14 @@ class WP_NoteUp_Remember_Note_Height {
 		] );
 	}
 
+	/**
+	 * Is the current Screen what we want?
+	 *
+	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
+	 * @since  1.3.0
+	 *
+	 * @return bool
+	 */
 	private function is_editable_screen() {
 		return in_array( get_current_screen()->post_type, $this->wp_noteup_instances['WP_NoteUp_CMB2']->object_types(), true );
 	}
