@@ -10,3 +10,4 @@ node_modules
 /lib/cmb2/.git*
 /vendor/
 composer.lock
+lib/
