@@ -3,8 +3,8 @@ Contributors: aubreypwd
 Donate link: http://github.com/aubreypwd/wp-noteup
 Tags: notes, note, markup, text, footnotes, research
 Requires at least: 3.8
-Tested up to: 4.9.4
-Stable tag: 1.2.2
+Tested up to: 5.2.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,12 @@ Install by going to your WordPress Dashboard > Plugins > Add New and searching f
 1. WP NoteUp in a Post
 
 == Changelog ==
+
+= 1.3.0 =
+
+- Now autosaves as you type
+- Editor height will be remembered if you resize
+- Working in WordPress 5.2.1
 
 = 1.2.2 =
 
